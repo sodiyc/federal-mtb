@@ -76,7 +76,7 @@ Data Anda langsung tersimpan online dan bisa dilihat seluruh komunitas. 🙌
 
 ```
 federal-mtb/
-├── index.html        ← Aplikasi utama (semua dalam satu file)
+├── federal_mtb_database.html        ← Aplikasi utama (semua dalam satu file)
 └── README.md         ← Halaman ini
 ```
 
