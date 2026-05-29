@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal MTB — Arsip Sepeda Nasional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+/* ===== RETRO PALETTE ===== */
+:root{
+  --ink:#1a1208;
+  --ink2:#2e2010;
+  --sepia:#4a3520;
+  --sepia2:#6b4f35;
+  --sepia3:#8b6f55;
+  --paper:#f5f0e8;
+  --paper2:#ede5d0;
+  --paper3:#e0d5bc;
+  --aged:#d4c4a0;
+  --cream:#faf7f0;
+  --rust:#8b2500;
+  --rust2:#a83200;
+  --rust3:#c44a1a;
+  --gold:#8a6a00;
+  --gold2:#b08a00;
+  --gold3:#d4a800;
+  --olive:#4a5a2a;
+  --olive2:#5a6e35;
+  --tan:#c8a87a;
+  --tan2:#b8985a;
+  --white:#fff;
+  --r-sm:2px;
+  --r-md:4px;
+  --r-lg:6px;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Libre Baskerville',Georgia,serif;
+  --font-type:'Special Elite',monospace;
+  --font-mono:'Courier Prime','Courier New',monospace;
+  --shadow-sm:1px 2px 4px rgba(26,18,8,0.15);
+  --shadow-md:2px 4px 12px rgba(26,18,8,0.18);
+  --shadow-lg:4px 8px 24px rgba(26,18,8,0.22);
+  --border:1px solid var(--aged);
+  --border-dark:1px solid var(--tan2);
+}
+
+/* ===== TEXTURE BODY ===== */
+body{
+  font-family:var(--font-body);
+  background-color:var(--paper2);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  color:var(--ink);
+  min-height:100vh;
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* ===== MASTHEAD ===== */
+.masthead{
+  background:var(--ink);
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.015) 2px,rgba(255,255,255,0.015) 4px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  border-bottom:4px solid var(--rust2);
+  position:sticky;top:0;z-index:100;
+}
+.masthead-top{
+  max-width:1140px;margin:0 auto;
+  padding:0 24px;
+  display:flex;align-items:center;gap:0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.masthead-logo{
+  padding:14px 0;
+  display:flex;flex-direction:column;align-items:flex-start;
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding-right:20px;margin-right:20px;
+}
+.logo-badge{
+  display:inline-flex;align-items:center;gap:8px;
+}
+.logo-emblem{
+  width:36px;height:36px;
+  background:var(--rust2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+  border:2px solid var(--rust3);
+  flex-shrink:0;
+}
+.logo-wordmark{
+  font-family:var(--font-display);
+  font-size:22px;font-weight:900;
+  color:var(--paper);
+  letter-spacing:-0.02em;
+  line-height:1;
+}
+.logo-tagline{
+  font-family:var(--font-mono);
+  font-size:9px;color:var(--sepia3);
+  text-transform:uppercase;letter-spacing:0.18em;
+  margin-top:3px;
+}
+.masthead-meta{
+  flex:1;
+  display:flex;flex-direction:column;gap:2px;
+}
+.masthead-title{
+  font-family:var(--font-display);
+  font-size:13px;font-style:italic;
+  color:rgba(245,240,232,0.5);
+}
+.masthead-sub{
+  font-family:var(--font-mono);
+  font-size:10px;color:rgba(245,240,232,0.3);
+  text-transform:uppercase;letter-spacing:0.12em;
+}
+.masthead-date{
+  font-family:var(--font-mono);font-size:10px;
+  color:rgba(245,240,232,0.3);
+  margin-left:auto;
+  text-align:right;
+}
+
+/* NAV */
+.nav-strip{
+  max-width:1140px;margin:0 auto;
+  padding:0 24px;
+  display:flex;gap:0;
+  overflow-x:auto;
+}
+.nav-strip::-webkit-scrollbar{display:none;}
+.nav-item{
+  font-family:var(--font-mono);
+  font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:rgba(245,240,232,0.55);
+  padding:10px 18px;
+  border:none;background:transparent;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:all 0.18s;
+  white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+}
+.nav-item:hover{color:var(--paper);border-bottom-color:rgba(196,74,26,0.5);}
+.nav-item.active{color:var(--paper);border-bottom-color:var(--rust2);}
+.nav-item .nav-icon{font-size:13px;}
+
+/* ===== LAYOUT ===== */
+.container{max-width:1140px;margin:0 auto;padding:28px 24px 80px;}
+.page{display:none;}.page.active{display:block;}
+
+/* ===== SECTION HEADERS ===== */
+.section-headline{
+  margin-bottom:24px;
+  padding-bottom:14px;
+  border-bottom:3px double var(--aged);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;
+}
+.section-headline h2{
+  font-family:var(--font-display);
+  font-size:28px;font-weight:900;
+  color:var(--ink);
+  line-height:1.1;
+}
+.section-headline h2 em{color:var(--rust2);font-style:italic;}
+.section-meta{
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--sepia3);text-transform:uppercase;letter-spacing:0.1em;
+  text-align:right;line-height:1.5;
+}
+.ornament{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:20px;
+}
+.ornament-line{flex:1;height:1px;background:var(--aged);}
+.ornament-text{
+  font-family:var(--font-mono);font-size:9px;
+  color:var(--sepia3);text-transform:uppercase;letter-spacing:0.15em;
+}
+
+/* ===== SEARCH PANEL ===== */
+.search-panel{
+  background:var(--cream);
+  border:var(--border-dark);
+  border-radius:var(--r-md);
+  padding:20px 22px;
+  margin-bottom:20px;
+  box-shadow:var(--shadow-sm);
+  position:relative;
+  overflow:hidden;
+}
+.search-panel::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:repeating-linear-gradient(90deg,var(--rust2) 0,var(--rust2) 8px,transparent 8px,transparent 12px);
+}
+.search-row{display:flex;gap:10px;align-items:center;margin-bottom:14px;}
+.search-wrap{flex:1;position:relative;}
+.search-label{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  font-family:var(--font-mono);font-size:13px;color:var(--sepia3);
+  pointer-events:none;
+}
+#searchInput{
+  width:100%;
+  padding:11px 14px 11px 42px;
+  border:1.5px solid var(--aged);
+  border-radius:var(--r-sm);
+  font-family:var(--font-body);font-size:14px;
+  color:var(--ink);background:var(--paper);
+  outline:none;
+  transition:border-color 0.15s,box-shadow 0.15s;
+}
+#searchInput:focus{border-color:var(--rust2);box-shadow:0 0 0 3px rgba(168,50,0,0.08);}
+#searchInput::placeholder{color:var(--sepia3);font-style:italic;}
+.btn-reset{
+  padding:10px 16px;
+  background:var(--paper3);border:1.5px solid var(--aged);
+  border-radius:var(--r-sm);
+  font-family:var(--font-mono);font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--sepia2);cursor:pointer;
+  transition:all 0.14s;white-space:nowrap;
+}
+.btn-reset:hover{background:var(--aged);border-color:var(--tan2);}
+
+/* FILTERS */
+.filters-section{display:flex;flex-direction:column;gap:10px;}
+.filter-group{display:flex;align-items:flex-start;gap:10px;}
+.filter-group-label{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--sepia3);padding-top:6px;min-width:52px;
+}
+.chips{display:flex;gap:5px;flex-wrap:wrap;}
+.chip{
+  font-family:var(--font-mono);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.07em;
+  padding:4px 10px;
+  border:1.5px solid var(--aged);border-radius:var(--r-sm);
+  background:var(--paper);color:var(--sepia2);
+  cursor:pointer;transition:all 0.13s;
+}
+.chip:hover{border-color:var(--rust2);color:var(--rust2);}
+.chip.active{background:var(--rust2);color:var(--paper);border-color:var(--rust2);}
+.chip.tech.active{background:var(--olive2);border-color:var(--olive2);color:var(--paper);}
+
+/* ===== STATS BAR ===== */
+.stats-bar{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;flex-wrap:wrap;
+}
+.result-label{
+  font-family:var(--font-mono);font-size:11px;
+  color:var(--sepia3);text-transform:uppercase;letter-spacing:0.08em;
+}
+.result-label strong{color:var(--ink);font-weight:700;}
+.bar-sep{color:var(--aged);font-size:14px;}
+.sort-group{display:flex;align-items:center;gap:7px;margin-left:auto;}
+.sort-label{font-family:var(--font-mono);font-size:10px;color:var(--sepia3);text-transform:uppercase;letter-spacing:0.08em;}
+select.retro-select{
+  font-family:var(--font-mono);font-size:11px;
+  padding:5px 10px;
+  border:1.5px solid var(--aged);border-radius:var(--r-sm);
+  background:var(--paper);color:var(--ink);
+  outline:none;cursor:pointer;
+}
+select.retro-select:focus{border-color:var(--rust2);}
+.view-btns{display:flex;gap:3px;}
+.view-btn{
+  width:30px;height:30px;
+  border:1.5px solid var(--aged);border-radius:var(--r-sm);
+  background:var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:14px;color:var(--sepia3);
+  transition:all 0.12s;
+}
+.view-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+/* ===== GRID CARDS ===== */
+.results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.results-list{display:flex;flex-direction:column;gap:6px;}
+
+.bike-card{
+  background:var(--cream);
+  border:var(--border);
+  border-radius:var(--r-sm);
+  padding:16px 18px 14px;
+  cursor:pointer;
+  transition:all 0.15s;
+  position:relative;
+  box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;gap:0;
+}
+.bike-card::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--rust2),transparent);
+  opacity:0;transition:opacity 0.15s;
+}
+.bike-card:hover{
+  box-shadow:var(--shadow-md);
+  transform:translateY(-2px);
+  border-color:var(--tan2);
+}
+.bike-card:hover::after{opacity:1;}
+
+.card-series-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-bottom:9px;
+}
+.card-series-dot{width:6px;height:6px;border-radius:50%;background:var(--rust2);flex-shrink:0;}
+.card-series-text{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--sepia2);
+}
+.card-name{
+  font-family:var(--font-display);
+  font-size:17px;font-weight:700;
+  color:var(--ink);line-height:1.2;
+  margin-bottom:5px;
+}
+.card-variant{
+  font-family:var(--font-body);
+  font-size:11px;color:var(--sepia3);
+  font-style:italic;line-height:1.4;
+  flex:1;
+}
+.card-footer{
+  display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;
+  padding-top:9px;border-top:1px dashed var(--aged);
+}
+.badge{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.06em;
+  padding:2px 7px;border-radius:2px;
+}
+.badge-tech{background:var(--paper3);color:var(--olive2);border:1px solid var(--aged);}
+.badge-sn{background:#e8f0e4;color:var(--olive);border:1px solid #b8d4b0;}
+.badge-rust{background:#f5e8e4;color:var(--rust2);border:1px solid #e4b8a8;}
+
+/* LIST VIEW */
+.bike-list-row{
+  background:var(--cream);border:var(--border);
+  border-radius:var(--r-sm);
+  padding:11px 16px;
+  display:flex;align-items:center;gap:12px;
+  cursor:pointer;transition:all 0.12s;
+  box-shadow:var(--shadow-sm);
+}
+.bike-list-row:hover{box-shadow:var(--shadow-md);border-color:var(--tan2);}
+.list-num{
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--sepia3);min-width:26px;text-align:right;
+}
+.list-sep{width:1px;height:28px;background:var(--aged);flex-shrink:0;}
+.list-series{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--sepia3);min-width:72px;flex-shrink:0;
+}
+.list-name{
+  font-family:var(--font-display);font-size:14px;font-weight:700;
+  color:var(--ink);flex:1;
+}
+.list-variant{
+  font-family:var(--font-body);font-size:11px;
+  color:var(--sepia3);font-style:italic;flex:2;
+}
+.list-badges{display:flex;gap:4px;flex-wrap:wrap;}
+
+/* EMPTY */
+.empty-state{
+  text-align:center;padding:60px 20px;
+  font-family:var(--font-display);
+}
+.empty-state .ei{font-size:48px;margin-bottom:14px;opacity:0.4;}
+.empty-state h3{font-size:20px;font-weight:700;font-style:italic;color:var(--sepia2);margin-bottom:6px;}
+.empty-state p{font-size:13px;color:var(--sepia3);font-family:var(--font-body);}
+
+mark{background:#f5e090;color:var(--ink);border-radius:1px;padding:0 1px;}
+
+/* ===== MODAL ===== */
+.modal-backdrop{
+  position:fixed;inset:0;
+  background:rgba(26,18,8,0.6);
+  backdrop-filter:blur(2px);
+  z-index:200;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;opacity:0;pointer-events:none;transition:opacity 0.2s;
+}
+.modal-backdrop.open{opacity:1;pointer-events:all;}
+.modal{
+  background:var(--cream);
+  border:2px solid var(--tan2);
+  border-radius:var(--r-md);
+  max-width:540px;width:100%;
+  box-shadow:var(--shadow-lg);
+  max-height:88vh;overflow-y:auto;
+  transform:translateY(12px) scale(0.98);
+  transition:transform 0.2s;
+}
+.modal-backdrop.open .modal{transform:translateY(0) scale(1);}
+.modal-header{
+  background:var(--ink);
+  padding:20px 24px;
+  position:relative;
+}
+.modal-stamp{
+  display:inline-block;
+  border:2px solid var(--rust3);
+  padding:2px 10px;margin-bottom:8px;
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.14em;color:var(--rust3);
+}
+.modal-title{
+  font-family:var(--font-display);font-size:24px;font-weight:900;
+  color:var(--paper);line-height:1.1;
+}
+.modal-close{
+  position:absolute;top:16px;right:18px;
+  background:rgba(245,240,232,0.1);
+  border:1px solid rgba(245,240,232,0.2);
+  border-radius:2px;
+  width:28px;height:28px;font-size:16px;line-height:28px;text-align:center;
+  color:var(--paper);cursor:pointer;transition:background 0.12s;
+  font-family:var(--font-mono);
+}
+.modal-close:hover{background:rgba(245,240,232,0.2);}
+.modal-body{padding:20px 24px;}
+.modal-section{margin-bottom:18px;}
+.modal-section-title{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.14em;color:var(--sepia3);
+  margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.modal-section-title::after{content:'';flex:1;height:1px;background:var(--aged);}
+.variant-list{display:flex;flex-direction:column;gap:5px;}
+.variant-item{
+  background:var(--paper);border:1px dashed var(--aged);
+  border-radius:var(--r-sm);padding:7px 12px;
+  font-family:var(--font-body);font-size:12px;color:var(--sepia2);
+  display:flex;align-items:baseline;gap:8px;
+}
+.variant-item::before{content:'›';color:var(--rust2);font-weight:700;font-size:14px;}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:5px;}
+.kw{
+  font-family:var(--font-mono);font-size:10px;
+  padding:3px 9px;border-radius:2px;
+  border:1px solid var(--aged);color:var(--sepia2);
+  background:var(--paper);
+}
+.sn-modal-list{display:flex;flex-direction:column;gap:5px;}
+.sn-modal-row{
+  background:var(--paper);border:1px solid #b8d4b0;
+  border-radius:var(--r-sm);padding:8px 12px;
+  display:flex;align-items:center;gap:10px;
+}
+.sn-modal-code{
+  font-family:var(--font-mono);font-size:13px;font-weight:700;
+  color:var(--olive);flex:1;
+  letter-spacing:0.05em;
+}
+.sn-modal-detail{font-family:var(--font-body);font-size:11px;color:var(--sepia3);font-style:italic;}
+
+/* ===== DECODER PAGE ===== */
+.decoder-masthead{
+  background:var(--ink);
+  border:2px solid var(--ink);border-radius:var(--r-md);
+  padding:28px 32px;
+  margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.decoder-masthead::before{
+  content:'SN';
+  position:absolute;right:-20px;top:-20px;
+  font-family:var(--font-display);font-size:180px;font-weight:900;
+  color:rgba(255,255,255,0.025);line-height:1;
+  pointer-events:none;user-select:none;
+}
+.decoder-title{
+  font-family:var(--font-display);font-size:32px;font-weight:900;font-style:italic;
+  color:var(--paper);margin-bottom:4px;
+}
+.decoder-sub{
+  font-family:var(--font-mono);font-size:11px;
+  color:rgba(245,240,232,0.4);text-transform:uppercase;letter-spacing:0.1em;
+}
+.decoder-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.decoder-layout{grid-template-columns:1fr;}}
+
+.decoder-input-panel{
+  background:var(--cream);border:var(--border-dark);
+  border-radius:var(--r-md);padding:22px;
+  box-shadow:var(--shadow-sm);
+}
+.decoder-input-label{
+  font-family:var(--font-mono);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.14em;color:var(--sepia3);
+  margin-bottom:8px;display:block;
+}
+.sn-input-big{
+  width:100%;padding:14px 16px;
+  border:2px solid var(--aged);border-radius:var(--r-sm);
+  font-family:var(--font-mono);font-size:18px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink);background:var(--paper);
+  outline:none;transition:border-color 0.15s,box-shadow 0.15s;
+}
+.sn-input-big:focus{border-color:var(--rust2);box-shadow:0 0 0 3px rgba(168,50,0,0.08);}
+.sn-input-big::placeholder{
+  font-family:var(--font-body);font-size:13px;font-weight:400;
+  letter-spacing:0;text-transform:none;color:var(--sepia3);font-style:italic;
+}
+.btn-decode{
+  width:100%;margin-top:10px;
+  padding:13px;
+  background:var(--rust2);border:none;border-radius:var(--r-sm);
+  font-family:var(--font-mono);font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:var(--paper);cursor:pointer;
+  transition:background 0.14s;
+  position:relative;
+}
+.btn-decode:hover{background:var(--rust);}
+.btn-decode::before{content:'▶ ';}
+
+.quick-label{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--sepia3);
+  margin:14px 0 7px;
+}
+.quick-chips{display:flex;flex-wrap:wrap;gap:5px;}
+.quick-chip{
+  font-family:var(--font-mono);font-size:11px;font-weight:700;
+  background:var(--paper3);border:1px solid var(--aged);
+  border-radius:var(--r-sm);padding:4px 9px;
+  color:var(--sepia2);cursor:pointer;
+  transition:all 0.12s;letter-spacing:0.04em;
+}
+.quick-chip:hover{background:var(--rust2);color:var(--paper);border-color:var(--rust2);}
+
+/* DECODER RESULT */
+.decoder-result-panel{
+  background:var(--cream);border:var(--border-dark);
+  border-radius:var(--r-md);padding:22px;
+  box-shadow:var(--shadow-sm);
+}
+.decode-error{
+  background:#f9eae6;border:1.5px solid #e4b8a8;
+  border-radius:var(--r-sm);padding:12px 16px;
+  font-family:var(--font-body);font-size:13px;color:var(--rust);
+  display:none;font-style:italic;
+}
+.decode-error.show{display:block;}
+.decode-result{display:none;}
+.decode-result.show{display:block;}
+
+.decode-model-name{
+  font-family:var(--font-display);font-size:26px;font-weight:900;
+  color:var(--ink);line-height:1.1;margin-bottom:4px;
+}
+.decode-fab-badge{
+  display:inline-block;
+  font-family:var(--font-mono);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--rust2);
+  border:1.5px solid var(--rust2);
+  padding:2px 10px;border-radius:2px;
+  margin-bottom:14px;
+}
+.decode-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  margin-bottom:14px;
+}
+.decode-stat{
+  background:var(--paper);border:1px solid var(--aged);
+  border-radius:var(--r-sm);padding:10px 12px;
+}
+.decode-stat-lbl{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;color:var(--sepia3);
+  margin-bottom:3px;
+}
+.decode-stat-val{
+  font-family:var(--font-mono);font-size:18px;font-weight:700;
+  color:var(--ink);letter-spacing:0.05em;
+}
+.decode-stat-sub{font-family:var(--font-body);font-size:11px;color:var(--sepia3);font-style:italic;}
+.breakdown-lbl{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--sepia3);
+  margin-bottom:7px;margin-top:10px;
+}
+.breakdown-row{display:flex;gap:5px;flex-wrap:wrap;}
+.bp{
+  background:var(--paper);border:1px solid var(--aged);
+  border-radius:var(--r-sm);padding:7px 10px;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  min-width:56px;
+}
+.bp-val{font-family:var(--font-mono);font-size:14px;font-weight:700;color:var(--rust2);}
+.bp-desc{font-family:var(--font-body);font-size:9px;color:var(--sepia3);font-style:italic;text-align:center;}
+
+/* GUIDE BOX */
+.guide-card{
+  background:var(--cream);border:var(--border-dark);
+  border-radius:var(--r-md);padding:22px 26px;
+  margin-bottom:20px;box-shadow:var(--shadow-sm);
+}
+.guide-title{
+  font-family:var(--font-display);font-size:18px;font-weight:700;
+  color:var(--ink);margin-bottom:14px;
+  padding-bottom:10px;border-bottom:2px solid var(--aged);
+}
+.guide-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:600px){.guide-cols{grid-template-columns:1fr;}}
+.guide-col-title{
+  font-family:var(--font-mono);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;color:var(--sepia3);
+  margin-bottom:8px;
+}
+.sn-demo{
+  font-family:var(--font-mono);font-size:15px;font-weight:700;
+  letter-spacing:0.1em;color:var(--rust2);
+  background:var(--paper);border:1.5px dashed var(--aged);
+  border-radius:var(--r-sm);padding:10px 14px;margin-bottom:10px;
+}
+.guide-explain{
+  font-family:var(--font-body);font-size:12px;color:var(--sepia2);line-height:1.9;
+}
+.guide-explain b{color:var(--ink);}
+.note-box{
+  background:#fdf8e8;border:1px solid #e8d880;
+  border-radius:var(--r-sm);padding:12px 16px;margin-top:14px;
+  font-family:var(--font-body);font-size:12px;color:var(--gold);line-height:1.6;
+}
+.note-box b{color:var(--gold);}
+
+/* SN TABLE */
+.sn-table-wrap{overflow-x:auto;}
+table.retro-table{width:100%;border-collapse:collapse;font-size:12px;}
+table.retro-table th{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;color:var(--sepia3);
+  padding:8px 12px;text-align:left;
+  background:var(--paper3);
+  border-top:2px solid var(--ink);border-bottom:1.5px solid var(--aged);
+}
+table.retro-table td{
+  padding:9px 12px;border-bottom:1px solid var(--aged);
+  color:var(--sepia2);vertical-align:middle;
+  font-family:var(--font-body);font-size:12px;
+}
+table.retro-table tr:hover td{background:var(--paper2);cursor:pointer;}
+table.retro-table td.sn-code{
+  font-family:var(--font-mono);font-weight:700;color:var(--rust2);
+  font-size:12px;letter-spacing:0.05em;
+}
+table.retro-table td.sn-model{font-weight:700;color:var(--ink);}
+.badge-src{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  padding:2px 7px;border-radius:2px;text-transform:uppercase;letter-spacing:0.06em;
+  background:#e8f0e4;color:var(--olive);border:1px solid #b8d4b0;
+}
+
+/* ===== KONTRIBUSI PAGE ===== */
+.contrib-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.contrib-layout{grid-template-columns:1fr;}}
+.form-card{
+  background:var(--cream);border:var(--border-dark);
+  border-radius:var(--r-md);padding:22px;box-shadow:var(--shadow-sm);
+}
+.form-card-title{
+  font-family:var(--font-display);font-size:18px;font-weight:700;font-style:italic;
+  color:var(--ink);margin-bottom:14px;padding-bottom:10px;
+  border-bottom:2px double var(--aged);
+}
+.form-group{margin-bottom:13px;}
+.form-lbl{
+  display:block;font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--sepia3);
+  margin-bottom:5px;
+}
+.form-inp{
+  width:100%;padding:9px 13px;
+  border:1.5px solid var(--aged);border-radius:var(--r-sm);
+  font-family:var(--font-body);font-size:13px;color:var(--ink);
+  background:var(--paper);outline:none;transition:border-color 0.14s;
+}
+.form-inp:focus{border-color:var(--rust2);}
+.form-inp.mono{font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;font-size:13px;}
+.form-hint{font-family:var(--font-body);font-size:11px;color:var(--sepia3);font-style:italic;margin-top:4px;}
+.btn-submit{
+  width:100%;padding:12px;
+  background:var(--ink);border:none;border-radius:var(--r-sm);
+  font-family:var(--font-mono);font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:var(--paper);cursor:pointer;transition:background 0.14s;
+}
+.btn-submit:hover{background:var(--rust);}
+.contrib-ok{
+  background:#e8f0e4;border:1px solid #b8d4b0;border-radius:var(--r-sm);
+  padding:12px 16px;margin-top:12px;
+  font-family:var(--font-body);font-size:13px;color:var(--olive);
+  display:none;
+}
+.contrib-ok.show{display:block;}
+.info-card{
+  background:var(--paper2);border:1px dashed var(--aged);
+  border-radius:var(--r-md);padding:18px;margin-bottom:14px;
+}
+.info-card-title{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--rust2);
+  margin-bottom:9px;
+}
+.info-card-body{
+  font-family:var(--font-body);font-size:12px;color:var(--sepia2);line-height:1.8;
+}
+.info-card-body b{color:var(--ink);}
+
+/* CONTRIB LIST */
+.contrib-list-card{
+  background:var(--cream);border:var(--border-dark);
+  border-radius:var(--r-md);padding:22px;
+  margin-top:20px;box-shadow:var(--shadow-sm);
+}
+.contrib-list-title{
+  font-family:var(--font-display);font-size:18px;font-weight:700;font-style:italic;
+  color:var(--ink);margin-bottom:14px;padding-bottom:10px;
+  border-bottom:2px double var(--aged);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:8px;
+}
+.contrib-count{font-family:var(--font-mono);font-size:11px;color:var(--sepia3);font-style:normal;}
+.contrib-item{
+  background:var(--paper);border:1px solid var(--aged);
+  border-radius:var(--r-sm);padding:10px 14px;margin-bottom:7px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.ci-sn{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--rust2);min-width:140px;}
+.ci-model{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--ink);flex:1;}
+.ci-note{font-family:var(--font-body);font-size:11px;color:var(--sepia3);font-style:italic;}
+.ci-date{font-family:var(--font-mono);font-size:9px;color:var(--sepia3);}
+.btn-del{
+  background:none;border:none;color:var(--aged);cursor:pointer;
+  font-size:15px;padding:2px 6px;border-radius:2px;transition:color 0.12s;
+  font-family:var(--font-mono);
+}
+.btn-del:hover{color:var(--rust2);}
+.action-row{
+  display:flex;gap:8px;justify-content:flex-end;margin-top:12px;
+  padding-top:12px;border-top:1px dashed var(--aged);
+}
+.btn-action{
+  font-family:var(--font-mono);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  padding:7px 14px;border:1.5px solid var(--aged);border-radius:var(--r-sm);
+  background:var(--paper);color:var(--sepia2);cursor:pointer;transition:all 0.12s;
+}
+.btn-action:hover{border-color:var(--rust2);color:var(--rust2);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .container{padding:16px 14px 60px;}
+  .masthead-top{padding:10px 14px;}
+  .nav-strip{padding:0 14px;}
+  .nav-item{padding:8px 12px;font-size:10px;}
+  .masthead-date,.masthead-meta{display:none;}
+  .results-grid{grid-template-columns:1fr;}
+  .list-variant,.sort-group{display:none;}
+  .decoder-masthead{padding:20px;}
+  .decoder-title{font-size:24px;}
+  .guide-cols,.contrib-layout{grid-template-columns:1fr;}
+}
+@media(max-width:420px){
+  .logo-wordmark{font-size:18px;}
+  .section-headline h2{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-logo">
+      <div class="logo-badge">
+        <div class="logo-emblem">🚵</div>
+        <div>
+          <div class="logo-wordmark">Federal MTB</div>
+          <div class="logo-tagline">Arsip Sepeda Nasional</div>
+        </div>
+      </div>
+    </div>
+    <div class="masthead-meta">
+      <div class="masthead-title">Dokumentasi Lengkap Seri & Model Sepeda Federal Indonesia</div>
+      <div class="masthead-sub">Vintage · 1989–1996 · Federal Cycle Manufacturing</div>
+    </div>
+    <div class="masthead-date" id="mastheadDate"></div>
+  </div>
+  <nav class="nav-strip">
+    <button class="nav-item active" onclick="showPage('db',this)"><span class="nav-icon">📰</span> Katalog</button>
+    <button class="nav-item" onclick="showPage('decoder',this)"><span class="nav-icon">🔢</span> Decoder SN</button>
+    <button class="nav-item" onclick="showPage('contrib',this)"><span class="nav-icon">✍️</span> Kontribusi</button>
+  </nav>
+</header>
+
+<!-- =================== KATALOG =================== -->
+<div class="page active" id="page-db">
+<div class="container">
+  <div class="section-headline">
+    <h2>Katalog <em>Lengkap</em> Federal MTB</h2>
+    <div class="section-meta">Edisi Arsip · 114 Model<br>Seri A — Q</div>
+  </div>
+
+  <div class="search-panel">
+    <div class="search-row">
+      <div class="search-wrap">
+        <span class="search-label">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari nama model, seri, teknologi frame…" autocomplete="off"/>
+      </div>
+      <button class="btn-reset" onclick="clearSearch()">✕ Reset</button>
+    </div>
+    <div class="filters-section">
+      <div class="filter-group">
+        <span class="filter-group-label">Seri</span>
+        <div class="chips" id="filterBtns"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-group-label">Frame</span>
+        <div class="chips" id="techBtns">
+          <button class="chip tech active" data-tech="Semua" onclick="setTech(this,'Semua')">Semua</button>
+          <button class="chip tech" data-tech="FIT2000" onclick="setTech(this,'FIT2000')">FIT2000</button>
+          <button class="chip tech" data-tech="FIT3000" onclick="setTech(this,'FIT3000')">FIT3000</button>
+          <button class="chip tech" data-tech="cycle2000" onclick="setTech(this,'cycle2000')">cycle2000</button>
+          <button class="chip tech" data-tech="HT9401" onclick="setTech(this,'HT9401')">HT9401</button>
+          <button class="chip tech" data-tech="Megatubing" onclick="setTech(this,'Megatubing')">Megatubing</button>
+          <button class="chip tech" data-tech="Integrated Tubing" onclick="setTech(this,'Integrated Tubing')">Int. Tubing</button>
+          <button class="chip tech" data-tech="Ovalized" onclick="setTech(this,'Ovalized')">Ovalized</button>
+          <button class="chip tech" data-tech="Aeroglide" onclick="setTech(this,'Aeroglide')">Aeroglide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="result-label" id="resultCount">Menampilkan semua model</div>
+    <span class="bar-sep">·</span>
+    <div class="sort-group">
+      <span class="sort-label">Urut:</span>
+      <select class="retro-select" id="sortSelect" onchange="render()">
+        <option value="default">Default</option>
+        <option value="az">A → Z</option>
+        <option value="za">Z → A</option>
+        <option value="series">Per Seri</option>
+      </select>
+    </div>
+    <div class="view-btns">
+      <button class="view-btn active" id="viewGrid" onclick="setView('grid')" title="Grid">⊞</button>
+      <button class="view-btn" id="viewList" onclick="setView('list')" title="List">☰</button>
+    </div>
+  </div>
+
+  <div id="resultsContainer"></div>
+</div>
+</div>
+
+<!-- =================== DECODER =================== -->
+<div class="page" id="page-decoder">
+<div class="container">
+  <div class="decoder-masthead">
+    <div class="decoder-title">Decoder Nomor Seri</div>
+    <div class="decoder-sub">Federal Cycle Manufacturing · 1989–1996 · Hipotesis Komunitas</div>
+  </div>
+
+  <div class="decoder-layout">
+    <div class="decoder-input-panel">
+      <label class="decoder-input-label">Masukkan Nomor Seri</label>
+      <input type="text" class="sn-input-big" id="snInput"
+        placeholder="FC 33 Y 00582"
+        maxlength="25" oninput="clearDecodeResult()" onkeydown="if(event.key==='Enter')decodeSN()"/>
+      <button class="btn-decode" onclick="decodeSN()">Decode</button>
+      <div class="quick-label">Contoh Cepat</div>
+      <div class="quick-chips" id="quickChips"></div>
+    </div>
+    <div class="decoder-result-panel">
+      <div class="decode-error" id="decodeError"></div>
+      <div class="decode-result" id="decodeResult">
+        <div class="decode-model-name" id="drName">—</div>
+        <div class="decode-fab-badge" id="drBadge">—</div>
+        <div class="decode-stats">
+          <div class="decode-stat">
+            <div class="decode-stat-lbl">Pabrik</div>
+            <div class="decode-stat-val" id="drFac">—</div>
+            <div class="decode-stat-sub" id="drFacSub">—</div>
+          </div>
+          <div class="decode-stat">
+            <div class="decode-stat-lbl">Tahun</div>
+            <div class="decode-stat-val" id="drYear">—</div>
+            <div class="decode-stat-sub" id="drYearSub">—</div>
+          </div>
+          <div class="decode-stat">
+            <div class="decode-stat-lbl">Bulan</div>
+            <div class="decode-stat-val" id="drMonth">—</div>
+            <div class="decode-stat-sub" id="drMonthSub">—</div>
+          </div>
+          <div class="decode-stat">
+            <div class="decode-stat-lbl">No. Urut</div>
+            <div class="decode-stat-val" id="drSerial">—</div>
+            <div class="decode-stat-sub">produksi ke-</div>
+          </div>
+        </div>
+        <div class="breakdown-lbl">Pembacaan SN:</div>
+        <div class="breakdown-row" id="drBreakdown"></div>
+      </div>
+      <div id="drPlaceholder" style="text-align:center;padding:40px 0;font-family:var(--font-display);font-style:italic;color:var(--sepia3);font-size:15px;">
+        Masukkan nomor seri<br>untuk memulai pembacaan…
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-card">
+    <div class="guide-title">Panduan Format Nomor Seri Federal</div>
+    <div class="guide-cols">
+      <div>
+        <div class="guide-col-title">Format FC Seri Huruf (X / Y / Z)</div>
+        <div class="sn-demo">FC &nbsp;33 &nbsp;Y &nbsp;00582</div>
+        <div class="guide-explain">
+          <b>FC</b> = Federal Cycle (pabrik)<br>
+          <b>33</b> = Tahun produksi → 1993<br>
+          <b>Y</b> = Bulan November<br>
+          <b>00582</b> = Nomor urut ke-582
+        </div>
+      </div>
+      <div>
+        <div class="guide-col-title">Format FC Seri Angka (1–9)</div>
+        <div class="sn-demo">FC &nbsp;74 &nbsp;2 &nbsp;05912</div>
+        <div class="guide-explain">
+          <b>FC</b> = Federal Cycle (pabrik)<br>
+          <b>74</b> = Kode tahun (1997?)<br>
+          <b>2</b> = Bulan Februari<br>
+          <b>05912</b> = Nomor urut ke-5912
+        </div>
+      </div>
+    </div>
+    <div class="note-box">
+      <b>Kode Bulan:</b> 1=Jan · 2=Feb · 3=Mar · 4=Apr · 5=Mei · 6=Jun · 7=Jul · 8=Agu · 9=Sep · <b>X=Okt · Y=Nov · Z=Des</b><br>
+      Format khusus: <b>K</b> = Kuwahara(?) · <b>W</b> = Tidak diketahui — masih dalam penelitian komunitas.
+    </div>
+  </div>
+
+  <div class="guide-card">
+    <div class="guide-title">Database Nomor Seri Terverifikasi</div>
+    <div class="sn-table-wrap">
+      <table class="retro-table" id="snTableMain">
+        <thead><tr><th>Nomor Seri</th><th>Model</th><th>Pabrik</th><th>Tahun</th><th>Bulan</th><th>Sumber</th></tr></thead>
+        <tbody id="snTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- =================== KONTRIBUSI =================== -->
+<div class="page" id="page-contrib">
+<div class="container">
+  <div class="section-headline">
+    <h2>Kontribusi <em>Komunitas</em></h2>
+    <div class="section-meta">Arsip Terbuka<br>Federal Riders Indonesia</div>
+  </div>
+
+  <div class="contrib-layout">
+    <div class="form-card">
+      <div class="form-card-title">Tambah Nomor Seri Baru</div>
+      <div class="form-group">
+        <label class="form-lbl">Nomor Seri *</label>
+        <input type="text" class="form-inp mono" id="cSN" placeholder="FC 33 Y 00582" maxlength="25"/>
+        <div class="form-hint">Ketik persis seperti tertera di rangka sepeda</div>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Nama Model *</label>
+        <input type="text" class="form-inp" id="cModel" placeholder="Contoh: StreetCat, MuddyCat Ultra"/>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Seri</label>
+        <select class="form-inp" id="cSeries" style="padding:9px 13px;"></select>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Catatan / Sumber</label>
+        <input type="text" class="form-inp" id="cNote" placeholder="Contoh: milik sendiri, grup FB Federal Bike ID"/>
+      </div>
+      <button class="btn-submit" onclick="submitContrib()">Simpan ke Arsip Komunitas</button>
+      <div class="contrib-ok" id="contribOk">✓ Terima kasih! Data berhasil disimpan ke arsip komunitas online. 🙏</div>
+    </div>
+    <div>
+      <div class="info-card">
+        <div class="info-card-title">📍 Letak Nomor Seri di Rangka</div>
+        <div class="info-card-body">
+          1. <b>Bawah bottom bracket</b> — batang bawah menghadap jalan<br>
+          2. <b>Sisi kiri bawah seat tube</b> — dekat front derailleur<br>
+          3. <b>Headtube bagian belakang</b><br><br>
+          Nomor seri <b>digravir atau dicetak timbul</b>, bukan stiker.
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">💡 Tips Membaca SN</div>
+        <div class="info-card-body">
+          • Bersihkan area dari karat atau cat dulu<br>
+          • Foto dalam <b>cahaya miring</b> (raking light)<br>
+          • Angka <b>0</b> vs huruf <b>O</b>: lihat konteks posisinya<br>
+          • Format: pabrik · tahun · bulan · nomor urut
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">🌐 Data Tersimpan Online</div>
+        <div class="info-card-body">
+          Data langsung tersimpan di database komunitas online<br>
+          dan bisa dilihat oleh semua member Federal Riders Indonesia.<br>
+          Gunakan <b>Export JSON</b> untuk backup data lengkap komunitas.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contrib-list-card">
+    <div class="contrib-list-title">
+      <span>Arsip Kontribusi Komunitas Online</span>
+      <span class="contrib-count" id="contribCount">0 entri</span>
+    </div>
+    <div id="contribList"><div style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--sepia3);padding:14px 0;">Belum ada kontribusi. Tambahkan nomor seri di atas!</div></div>
+    <div class="action-row">
+      <button class="btn-action" onclick="exportContribs()">↑ Export JSON</button>
+      <button class="btn-action" onclick="clearContribs()" style="color:var(--rust2);">✕ Hapus Semua</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-stamp" id="mStamp">—</div>
+      <div class="modal-title" id="mTitle">—</div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+// ===================================================================
+//  DATABASE MODEL
+// ===================================================================
+const DATABASE=[
+  {id:1,seri:'Seri Kucing',kode:'A',nama:'AlleyCat',varian:['AlleyCat MG 53 SS'],keywords:['mg','ss','53'],tech:[]},
+  {id:2,seri:'Seri Kucing',kode:'A',nama:'BigCat',varian:[],keywords:[],tech:[]},
+  {id:3,seri:'Seri Kucing',kode:'A',nama:'BobCat',varian:['BobCat MG 20','BobCat SS FMG 21 S Pathfinder','BobCat SS cycle2000 HT9401','BobCat SX cycle2000 HT9401'],keywords:['mg','ss','sx','pathfinder'],tech:['cycle2000','HT9401']},
+  {id:4,seri:'Seri Kucing',kode:'A',nama:'CityCat',varian:['CityCat MG 40','CityCat SS FMG 41 S Pure Riding Experience HT9401','CityCat MG 43 SX FIT2000 cycle2000'],keywords:['mg','ss','sx','pure riding'],tech:['FIT2000','cycle2000','HT9401']},
+  {id:5,seri:'Seri Kucing',kode:'A',nama:'LadyCat',varian:['LadyCat ML 52 SS'],keywords:['ml','ss'],tech:[]},
+  {id:6,seri:'Seri Kucing',kode:'A',nama:'MarbleCat',varian:[],keywords:[],tech:[]},
+  {id:7,seri:'Seri Kucing',kode:'A',nama:'MuddyCat',varian:['MuddyCat ML 53 SS'],keywords:['ml','ss'],tech:[]},
+  {id:8,seri:'Seri Kucing',kode:'A',nama:'PussyCat',varian:['PussyCat ML 20','PussyCat SS ML 21S Pathfinder','PussyCat SS cycle2000 HT9401','PussyCat SX cycle2000 HT9401'],keywords:['ml','ss','sx','pathfinder'],tech:['cycle2000','HT9401']},
+  {id:9,seri:'Seri Kucing',kode:'A',nama:'StoneCat',varian:[],keywords:[],tech:[]},
+  {id:10,seri:'Seri Kucing',kode:'A',nama:'StrayCat',varian:['StrayCat ML 40','StrayCat SS FML 41 S Pure Riding Experience HT9401','StrayCat 43 SX cycle2000'],keywords:['ml','ss','sx','pure riding'],tech:['cycle2000','HT9401']},
+  {id:11,seri:'Seri Kucing',kode:'A',nama:'StreetCat',varian:['StreetCat MG 30','StreetCat 550','StreetCat SS MG 31 S Nicest People Rider','StreetCat MG 33 SX cycle2000 HT9401'],keywords:['mg','ss','sx','nicest people','550'],tech:['cycle2000','HT9401']},
+  {id:12,seri:'Seri Kucing',kode:'A',nama:'TomCat',varian:['TomCat SS Rockhopper FMG 11 S','TomCat CS Rockhopper FMG 11 C','TomCat CX Rockhopper FMG 11 CX','TomCat CT Rockhopper FMG 11 T'],keywords:['rockhopper','fmg','ss','cs','cx','ct'],tech:[]},
+  {id:13,seri:'Seri Kucing',kode:'A',nama:'WhiteCat',varian:[],keywords:[],tech:[]},
+  {id:14,seri:'Seri Kucing',kode:'A',nama:'WildCat',varian:['WildCat ML 30','WildCat 440','WildCat SS ML 31 S Nicest People Rider','WildCat ML 33 SX cycle2000 HT9401'],keywords:['ml','ss','sx','nicest people','440'],tech:['cycle2000','HT9401']},
+  {id:15,seri:'Seri Macan',kode:'B',nama:'Cheetah',varian:['Cheetah 440'],keywords:['440'],tech:[]},
+  {id:16,seri:'Seri Macan',kode:'B',nama:'Jaguar',varian:['Jaguar 550'],keywords:['550'],tech:[]},
+  {id:17,seri:'Seri Macan',kode:'B',nama:'Kougar',varian:[],keywords:[],tech:[]},
+  {id:18,seri:'Seri Macan',kode:'B',nama:'Poema',varian:[],keywords:[],tech:[]},
+  {id:19,seri:'Seri Macan',kode:'B',nama:'Panther Competition',varian:['Panther Competition 89xxx'],keywords:['competition'],tech:[]},
+  {id:20,seri:'Seri Gunung',kode:'C',nama:'Alpenz Peak',varian:['AP cycle2000 HT9401','AP 3 jalur kabel Megatubing Ovalized','AP FIT3000 cycle2000'],keywords:['3 jalur'],tech:['cycle2000','HT9401','Megatubing','Ovalized','FIT3000']},
+  {id:21,seri:'Seri Gunung',kode:'C',nama:'Cartenz Peak',varian:['Cartenz Peak cycle2000 HT9401'],keywords:[],tech:['cycle2000','HT9401']},
+  {id:22,seri:'Seri Gunung',kode:'C',nama:'Mt Everest',varian:['Mt Everest cycle2000 HT9401 Motif Retak','Mt Everest cycle2000 HT9401 Motif 2 tone','Mt Everest FIT3000'],keywords:['motif retak','2 tone'],tech:['cycle2000','HT9401','FIT3000']},
+  {id:23,seri:'Seri Gunung',kode:'C',nama:'Paragon',varian:['Paragon FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:24,seri:'Seri Gunung',kode:'C',nama:'Rock Blazer',varian:['Rock Blazer cycle2000 HT9401'],keywords:[],tech:['cycle2000','HT9401']},
+  {id:25,seri:'Seri Road',kode:'D',nama:'Alpha',varian:['Alpha 550','Alpha FRG 40','Alpha City Racer SS cycle2000 FRG 41 S'],keywords:['550','frg','ss','city racer'],tech:['cycle2000']},
+  {id:26,seri:'Seri Road',kode:'D',nama:'Beta',varian:['Beta 550','Beta FRG 30','Beta Street Racer SS cycle2000 FRG 31 S'],keywords:['550','frg','ss','street racer'],tech:['cycle2000']},
+  {id:27,seri:'Seri Road',kode:'D',nama:'Bolero Aeroglide',varian:[],keywords:[],tech:['Aeroglide']},
+  {id:28,seri:'Seri Road',kode:'D',nama:'Emerald',varian:[],keywords:[],tech:[]},
+  {id:29,seri:'Seri Road',kode:'D',nama:'Moonstone',varian:[],keywords:[],tech:[]},
+  {id:30,seri:'Seri Road',kode:'D',nama:'Rainbow',varian:['Rainbow 440'],keywords:['440'],tech:[]},
+  {id:31,seri:'Seri Road',kode:'D',nama:'Suprimo Aeroglide',varian:[],keywords:[],tech:['Aeroglide']},
+  {id:32,seri:'Seri Road',kode:'D',nama:'Stylizer',varian:[],keywords:[],tech:[]},
+  {id:33,seri:'Seri Terrain',kode:'E',nama:'Monaco Terrain',varian:['Monaco Terrain Integrated Tubing'],keywords:['terrain'],tech:['Integrated Tubing']},
+  {id:34,seri:'Seri Terrain',kode:'E',nama:'Rivera Terrain',varian:['Rivera Terrain Integrated Tubing'],keywords:['terrain'],tech:['Integrated Tubing']},
+  {id:35,seri:'Seri Terrain',kode:'E',nama:'Torino Terrain',varian:['Torino Terrain Integrated Tubing'],keywords:['terrain'],tech:['Integrated Tubing']},
+  {id:36,seri:'Seri Terrain',kode:'E',nama:'Valencia Terrain',varian:['Valencia Terrain Integrated Tubing'],keywords:['terrain'],tech:['Integrated Tubing']},
+  {id:37,seri:'Seri Kota',kode:'F',nama:'Manhattan',varian:['Manhattan FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:38,seri:'Seri Kota',kode:'F',nama:'Monaco',varian:['Monaco FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:39,seri:'Seri Kota',kode:'F',nama:'Montreal',varian:[],keywords:[],tech:[]},
+  {id:40,seri:'Seri Kota',kode:'F',nama:'Torino',varian:['Torino FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:41,seri:'Seri Kota',kode:'F',nama:'Valencia',varian:['Valencia FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:42,seri:'Seri Touring',kode:'G',nama:'City Tour Socio',varian:['City Tour Socio SS FTG 30'],keywords:['ss','ftg','socio'],tech:[]},
+  {id:43,seri:'Seri Touring',kode:'G',nama:'City Traveller Socio',varian:['City Traveller Socio SS FMG 30'],keywords:['ss','fmg','socio'],tech:[]},
+  {id:44,seri:'Seri Touring',kode:'G',nama:'Socio',varian:['Socio SS cycle2000 FTG 41S','Socio SS cycle2000 FTL 41S'],keywords:['ss','ftg','ftl','socio'],tech:['cycle2000']},
+  {id:45,seri:'Seri Elang',kode:'H',nama:'CityHawk',varian:['CityHawk CountryCross','CityHawk cycle2000'],keywords:['countrycross'],tech:['cycle2000']},
+  {id:46,seri:'Seri Elang',kode:'H',nama:'MountainHawk',varian:['MountainHawk WoodCross'],keywords:['woodcross'],tech:[]},
+  {id:47,seri:'Seri Elang',kode:'H',nama:'SkyHawk',varian:['SkyHawk CityCross'],keywords:['citycross'],tech:[]},
+  {id:48,seri:'Seri Elang',kode:'H',nama:'StreetHawk',varian:['StreetHawk HillCross'],keywords:['hillcross'],tech:[]},
+  {id:49,seri:'Seri Elang',kode:'H',nama:'TomHawk',varian:['TomHawk WindCross'],keywords:['windcross'],tech:[]},
+  {id:50,seri:'Seri Mixtie',kode:'I',nama:'Saphire',varian:[],keywords:[],tech:[]},
+  {id:51,seri:'Seri Mixtie',kode:'I',nama:'Strobo',varian:[],keywords:[],tech:[]},
+  {id:52,seri:'Seri Boys 24"',kode:'J',nama:'Bronco',varian:['Bronco FMB 20'],keywords:['fmb'],tech:[]},
+  {id:53,seri:'Seri Boys 24"',kode:'J',nama:'Mustang',varian:['Mustang FMB 30'],keywords:['fmb'],tech:[]},
+  {id:54,seri:'Seri Boys 24"',kode:'J',nama:'Stallion',varian:['Stallion FMB 20'],keywords:['fmb'],tech:[]},
+  {id:55,seri:'Seri Daughters 24"',kode:'K',nama:'Alpha 550',varian:[],keywords:['550'],tech:[]},
+  {id:56,seri:'Seri Daughters 24"',kode:'K',nama:'Monaco FIT2000',varian:['Monaco FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:57,seri:'Seri Daughters 24"',kode:'K',nama:'Pinto',varian:['Pinto FMD 30'],keywords:['fmd'],tech:[]},
+  {id:58,seri:'Seri Daughters 24"',kode:'K',nama:'Pony',varian:['Pony FMD 20'],keywords:['fmd'],tech:[]},
+  {id:59,seri:'Seri Daughters 24"',kode:'K',nama:'StrayCat MD',varian:['StrayCat MD 41S'],keywords:['md'],tech:[]},
+  {id:60,seri:'Seri Daughters 24"',kode:'K',nama:'Sumba',varian:['Sumba FMD 40'],keywords:['fmd'],tech:[]},
+  {id:61,seri:'Seri Juvenile 20"',kode:'L',nama:'Century Fox',varian:['Century Fox FMJ 40'],keywords:['fmj'],tech:[]},
+  {id:62,seri:'Seri Juvenile 20"',kode:'L',nama:'Street Fox',varian:['Street Fox FMJ 30'],keywords:['fmj'],tech:[]},
+  {id:63,seri:'Bicycle 2000',kode:'M',nama:'Amazone',varian:['Amazone An Exciting Bike HT9401','Amazone FIT2000'],keywords:['exciting'],tech:['HT9401','FIT2000']},
+  {id:64,seri:'Bicycle 2000',kode:'M',nama:'Cerini',varian:['Cerini FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:65,seri:'Bicycle 2000',kode:'M',nama:'Chambers',varian:['Chambers FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:66,seri:'Bicycle 2000',kode:'M',nama:'Cosmo',varian:['Cosmo FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:67,seri:'Bicycle 2000',kode:'M',nama:'Flamengo',varian:['Flamengo FIT2000','Flamengo An Exciting Bike HT9401'],keywords:['exciting'],tech:['FIT2000','HT9401']},
+  {id:68,seri:'Bicycle 2000',kode:'M',nama:'Venus',varian:['Venus FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:69,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Alt 2000',varian:['Alt 2000 FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:70,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Blue County VTC',varian:['Blue County VTC serie FIT2000'],keywords:['vtc'],tech:['FIT2000']},
+  {id:71,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Competition',varian:[],keywords:['competition'],tech:[]},
+  {id:72,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'CityCat Ultra',varian:[],keywords:[],tech:['Ovalized','Megatubing']},
+  {id:73,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Diagram Mt Serie',varian:['Diagram Mt Serie FIT2000 fc95xxx'],keywords:['fc95'],tech:['FIT2000']},
+  {id:74,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Desert',varian:['Desert FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:75,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Eclipse',varian:['Eclipse FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:76,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Fifth Avenue',varian:['Fifth Avenue cycle2000 fc65xxx'],keywords:['fc65'],tech:['cycle2000']},
+  {id:77,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Magma Mountain Serie',varian:[],keywords:['magma'],tech:[]},
+  {id:78,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Montana',varian:[],keywords:[],tech:[]},
+  {id:79,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Montreal',varian:[],keywords:[],tech:[]},
+  {id:80,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Rivera Terrain FIT2000',varian:[],keywords:['terrain'],tech:['FIT2000']},
+  {id:81,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Savage',varian:['Savage FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:82,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Sidewinder',varian:['Sidewinder FIT2000 fc74xxx'],keywords:['fc74'],tech:['FIT2000']},
+  {id:83,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'StoneCat FIT2000',varian:['StoneCat FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:84,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Target',varian:['Target FIT2000 cycle2000 fc95xxx'],keywords:['fc95'],tech:['FIT2000','cycle2000']},
+  {id:85,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Torino FIT2000',varian:[],keywords:[],tech:['FIT2000']},
+  {id:86,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Torino Terrain IT',varian:['Torino Terrain Integrated Tubing'],keywords:['terrain'],tech:['Integrated Tubing']},
+  {id:87,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'Track',varian:['Track FIT2000 cycle2000'],keywords:[],tech:['FIT2000','cycle2000']},
+  {id:88,seri:'Seri 3 Jalur Kabel',kode:'N',nama:'X-Cross',varian:['X-Cros fc95xxx'],keywords:['fc95','xcross'],tech:[]},
+  {id:89,seri:'Seri Ultra',kode:'O',nama:'AlleyCat Ultra',varian:['AlleyCat Ultra Ovalized Mega Tubing'],keywords:[],tech:['Ovalized','Megatubing']},
+  {id:90,seri:'Seri Ultra',kode:'O',nama:'CityCat Ultra',varian:['CityCat Ultra Ovalized Mega Tubing'],keywords:[],tech:['Ovalized','Megatubing']},
+  {id:91,seri:'Seri Ultra',kode:'O',nama:'MuddyCat Ultra',varian:['MuddyCat Ultra Ovalized Mega Tubing'],keywords:[],tech:['Ovalized','Megatubing']},
+  {id:92,seri:'Seri Ultra',kode:'O',nama:'StreetCat Ultra',varian:['StreetCat Ultra Ovalized Mega Tubing'],keywords:[],tech:['Ovalized','Megatubing']},
+  {id:93,seri:'Seri Ultra',kode:'O',nama:'Torino Terrain Ultra',varian:[],keywords:['terrain'],tech:['Ovalized','Megatubing']},
+  {id:94,seri:'Uncategorized',kode:'P',nama:'Challenger',varian:['Challenger FIT2000 fc75'],keywords:['fc75'],tech:['FIT2000']},
+  {id:95,seri:'Uncategorized',kode:'P',nama:'Jengki',varian:['Jengki fc95xxx'],keywords:['fc95'],tech:[]},
+  {id:96,seri:'Uncategorized',kode:'P',nama:'Preferred',varian:['Preferred fc95xxx FIT2000'],keywords:['fc95'],tech:['FIT2000']},
+  {id:97,seri:'Uncategorized',kode:'P',nama:'Lady Bug',varian:[],keywords:['lady'],tech:[]},
+  {id:98,seri:'Uncategorized',kode:'P',nama:'Lady County',varian:[],keywords:['lady'],tech:[]},
+  {id:99,seri:'Uncategorized',kode:'P',nama:'Muddy Fox',varian:[],keywords:['muddy'],tech:[]},
+  {id:100,seri:'Uncategorized',kode:'P',nama:'Sketch',varian:['Sketch Pure Riding Experience'],keywords:['pure riding'],tech:[]},
+  {id:101,seri:'Uncategorized',kode:'P',nama:'Stabilisky',varian:['Stabilisky fc95xxx'],keywords:['fc95'],tech:[]},
+  {id:102,seri:'Uncategorized',kode:'P',nama:'Bad Bird',varian:['Bad Bird FIT2000'],keywords:[],tech:['FIT2000']},
+  {id:103,seri:'Non-Federal Decal',kode:'Q',nama:'Centro Albany',varian:['Centro Albany fc32xxx'],keywords:['fc32'],tech:[]},
+  {id:104,seri:'Non-Federal Decal',kode:'Q',nama:'Centro Crosswind',varian:['Centro Crosswind fc32xxx'],keywords:['fc32'],tech:[]},
+  {id:105,seri:'Non-Federal Decal',kode:'Q',nama:'Townsend',varian:['Federal Townsend FIT2000 fc95xxx','Townsend Oregon Trail fc33xxx'],keywords:['fc95','fc33','oregon trail'],tech:['FIT2000']},
+  {id:106,seri:'Non-Federal Decal',kode:'Q',nama:'Hi-Gear',varian:['Hi-Gear fc39xxx'],keywords:['fc39'],tech:[]},
+  {id:107,seri:'Non-Federal Decal',kode:'Q',nama:'Metal Craft',varian:[],keywords:[],tech:[]},
+  {id:108,seri:'Non-Federal Decal',kode:'Q',nama:'Opus',varian:[],keywords:[],tech:[]},
+  {id:109,seri:'Non-Federal Decal',kode:'Q',nama:'Silver Fox',varian:[],keywords:[],tech:[]},
+  {id:110,seri:'Non-Federal Decal',kode:'Q',nama:'Kuwahara Parkway',varian:['Kuwahara m3.5 Parkway fc31xxx'],keywords:['kuwahara','fc31'],tech:[]},
+  {id:111,seri:'Non-Federal Decal',kode:'Q',nama:'Kuwahara Savage',varian:['Kuwahara m4.5 Savage fc31xxx'],keywords:['kuwahara','fc31'],tech:[]},
+  {id:112,seri:'Non-Federal Decal',kode:'Q',nama:'Kuwahara Instinct',varian:['Kuwahara Instinct fc95xxx'],keywords:['kuwahara','fc95'],tech:[]},
+  {id:113,seri:'Non-Federal Decal',kode:'Q',nama:'Racer Ebene',varian:['Racer Ebene Town and Field fc95xxx'],keywords:['fc95','town and field'],tech:[]},
+  {id:114,seri:'Non-Federal Decal',kode:'Q',nama:'Emelle Tough Trakker',varian:['Emelle zTough Trakker fc31xxx'],keywords:['fc31','trakker'],tech:[]},
+];
+
+const SN_DB=[
+  {sn:'FC 14 Y 00006',model:'Valley Cat FIT3000',pabrik:'FC',tahun:1994,bulan:'Y',serial:'00006'},
+  {sn:'FC 23 X 00002',model:'Mt Everest',pabrik:'FC',tahun:1993,bulan:'X',serial:'00002'},
+  {sn:'FC 26 X 01392',model:'Flamengo',pabrik:'FC',tahun:1992,bulan:'X',serial:'01392'},
+  {sn:'FC 33 Y 00582',model:'StreetCat',pabrik:'FC',tahun:1993,bulan:'Y',serial:'00582'},
+  {sn:'FC 43 Z 02102',model:'CityCat',pabrik:'FC',tahun:1994,bulan:'Z',serial:'02102'},
+  {sn:'FC 53 Y 02103',model:'MuddyCat',pabrik:'FC',tahun:1995,bulan:'Y',serial:'02103'},
+  {sn:'FC 55 X 00064',model:'MuddyCat Ultra',pabrik:'FC',tahun:1995,bulan:'X',serial:'00064'},
+  {sn:'FC 55 7 00322',model:'MuddyCat Ultra',pabrik:'FC',tahun:1995,bulan:'7',serial:'00322'},
+  {sn:'FC 65 X 00340',model:'Valencia Terrain',pabrik:'FC',tahun:1996,bulan:'X',serial:'00340'},
+  {sn:'FC 65 X 01306',model:'Rivera Terrain',pabrik:'FC',tahun:1996,bulan:'X',serial:'01306'},
+  {sn:'FC 74 X 00718',model:'Cosmo',pabrik:'FC',tahun:1997,bulan:'X',serial:'00718'},
+  {sn:'FC 74 2 00885',model:'Flamengo',pabrik:'FC',tahun:1997,bulan:'2',serial:'00885'},
+  {sn:'FC 74 2 05912',model:'Monaco',pabrik:'FC',tahun:1997,bulan:'2',serial:'05912'},
+  {sn:'FC 74 9 03139',model:'Torino',pabrik:'FC',tahun:1997,bulan:'9',serial:'03139'},
+  {sn:'FC 75 Y 04068',model:'Torino Terrain',pabrik:'FC',tahun:1997,bulan:'Y',serial:'04068'},
+  {sn:'FC 75 Y 06101',model:'Eclipse',pabrik:'FC',tahun:1997,bulan:'Y',serial:'06101'},
+  {sn:'FC 75 2 01180',model:'Chambers',pabrik:'FC',tahun:1997,bulan:'2',serial:'01180'},
+  {sn:'FC 75 4 00994',model:'Torino Terrain',pabrik:'FC',tahun:1997,bulan:'4',serial:'00994'},
+  {sn:'FC 75 6 00260',model:'Torino Terrain',pabrik:'FC',tahun:1997,bulan:'6',serial:'00260'},
+  {sn:'FC 75 6 01160',model:'Torino Terrain',pabrik:'FC',tahun:1997,bulan:'6',serial:'01160'},
+  {sn:'FC 75 8 01124',model:'Torino Terrain',pabrik:'FC',tahun:1997,bulan:'8',serial:'01124'},
+  {sn:'FC 21 4 50194',model:'PussyCat SS',pabrik:'FC',tahun:1992,bulan:'4',serial:'50194'},
+  {sn:'FC 38 3 51198',model:'StrayCat ML 43SX',pabrik:'FC',tahun:1993,bulan:'3',serial:'51198'},
+  {sn:'FC 44 5 00310',model:'StrayCat',pabrik:'FC',tahun:1994,bulan:'5',serial:'00310'},
+  {sn:'FC 95 X 01011',model:'Torino Terrain',pabrik:'FC',tahun:1999,bulan:'X',serial:'01011'},
+  {sn:'FC 95 Y 06851',model:'X-Cross',pabrik:'FC',tahun:1999,bulan:'Y',serial:'06851'},
+  {sn:'FC 95 9 03052',model:'Metal Craft',pabrik:'FC',tahun:1999,bulan:'9',serial:'03052'},
+  {sn:'FC 95 9 06736',model:'MuddyCat',pabrik:'FC',tahun:1999,bulan:'9',serial:'06736'},
+  {sn:'K 92 0 21182',model:'CityCat',pabrik:'K(?)',tahun:1992,bulan:'0',serial:'21182'},
+  {sn:'K 92 0 23911',model:'Kuwahara',pabrik:'K(?)',tahun:1992,bulan:'0',serial:'23911'},
+  {sn:'W 89 0 60125',model:'Strobo',pabrik:'W(?)',tahun:1989,bulan:'0',serial:'60125'},
+  {sn:'94 01 01762',model:'Compe / Competition',pabrik:'?',tahun:1994,bulan:'01',serial:'01762'},
+];
+
+const MONTHS={'1':'Januari','2':'Februari','3':'Maret','4':'April','5':'Mei','6':'Juni','7':'Juli','8':'Agustus','9':'September','X':'Oktober','Y':'November','Z':'Desember','0':'?','01':'Januari'};
+const ALL_SERIES=[...new Set(DATABASE.map(d=>d.seri))];
+let currentView='grid',activeFilter='Semua',activeTech='Semua',query='';
+
+// Date stamp
+const now=new Date();
+document.getElementById('mastheadDate').innerHTML=
+  now.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})
+  +'<br><span style="font-size:9px;opacity:0.5;">ARSIP DIGITAL</span>';
+
+// ===== NAV =====
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+
+// ===== KATALOG =====
+const filterCont=document.getElementById('filterBtns');
+['Semua',...ALL_SERIES].forEach(s=>{
+  const b=document.createElement('button');
+  b.className='chip'+(s==='Semua'?' active':'');
+  b.textContent=s==='Semua'?'Semua':s.replace('Seri ','');b.title=s;
+  b.onclick=()=>{
+    activeFilter=s;
+    document.querySelectorAll('#filterBtns .chip').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');render();
+  };
+  filterCont.appendChild(b);
+});
+
+function setTech(btn,tech){
+  activeTech=tech;
+  document.querySelectorAll('#techBtns .chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');render();
+}
+
+document.getElementById('searchInput').addEventListener('input',e=>{query=e.target.value.trim();render();});
+
+function clearSearch(){
+  document.getElementById('searchInput').value='';
+  query='';activeFilter='Semua';activeTech='Semua';
+  document.querySelectorAll('#filterBtns .chip').forEach(b=>b.classList.remove('active'));
+  document.querySelector('#filterBtns .chip').classList.add('active');
+  document.querySelectorAll('#techBtns .chip').forEach(b=>b.classList.remove('active'));
+  document.querySelector('#techBtns .chip[data-tech="Semua"]').classList.add('active');
+  render();
+}
+
+function setView(v){
+  currentView=v;
+  document.getElementById('viewGrid').classList.toggle('active',v==='grid');
+  document.getElementById('viewList').classList.toggle('active',v==='list');
+  render();
+}
+
+function hl(text,q){
+  if(!q)return text;
+  const e=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return text.replace(new RegExp('('+e+')','gi'),'<mark>$1</mark>');
+}
+
+function getModelSNs(nama){
+  const n=nama.toLowerCase().split(' ')[0];
+  return SN_DB.filter(s=>s.model.toLowerCase().includes(nama.toLowerCase().split(' ')[0])||nama.toLowerCase().includes(s.model.toLowerCase().split(' ')[0]));
+}
+
+function getFiltered(){
+  let data=[...DATABASE];
+  if(activeFilter!=='Semua') data=data.filter(d=>d.seri===activeFilter);
+  if(activeTech!=='Semua') data=data.filter(d=>d.tech&&d.tech.some(t=>t.toLowerCase()===activeTech.toLowerCase()));
+  if(query){
+    const q=query.toLowerCase();
+    data=data.filter(d=>
+      d.nama.toLowerCase().includes(q)||
+      d.seri.toLowerCase().includes(q)||
+      d.varian.some(v=>v.toLowerCase().includes(q))||
+      d.keywords.some(k=>k.toLowerCase().includes(q))||
+      (d.tech&&d.tech.some(t=>t.toLowerCase().includes(q)))
+    );
+  }
+  const sort=document.getElementById('sortSelect').value;
+  if(sort==='az') data.sort((a,b)=>a.nama.localeCompare(b.nama));
+  else if(sort==='za') data.sort((a,b)=>b.nama.localeCompare(a.nama));
+  else if(sort==='series') data.sort((a,b)=>a.kode.localeCompare(b.kode)||a.nama.localeCompare(b.nama));
+  return data;
+}
+
+function render(){
+  const data=getFiltered();
+  const container=document.getElementById('resultsContainer');
+  const total=DATABASE.length;
+  const countEl=document.getElementById('resultCount');
+  if(data.length===total&&!query&&activeFilter==='Semua'&&activeTech==='Semua'){
+    countEl.innerHTML='Menampilkan <strong>'+total+' model</strong> dari semua seri';
+  } else {
+    countEl.innerHTML='Ditemukan <strong>'+data.length+'</strong> dari '+total+' model';
+  }
+  if(data.length===0){
+    container.innerHTML='<div class="empty-state"><div class="ei">📰</div><h3>Tidak Ditemukan</h3><p>Coba kata kunci lain atau ubah filter seri.</p></div>';
+    return;
+  }
+
+  if(currentView==='grid'){
+    container.innerHTML='<div class="results-grid" id="innerGrid"></div>';
+    const grid=document.getElementById('innerGrid');
+    data.forEach(item=>{
+      const sns=getModelSNs(item.nama);
+      const card=document.createElement('div');
+      card.className='bike-card';card.onclick=()=>openModal(item);
+      const varPrev=item.varian.length?item.varian[0]:'Tidak ada data varian';
+      const techBadges=(item.tech||[]).map(t=>'<span class="badge badge-tech">'+t+'</span>').join('');
+      const snBadge=sns.length?'<span class="badge badge-sn">'+sns.length+' SN</span>':'';
+      card.innerHTML=`
+        <div class="card-series-badge">
+          <span class="card-series-dot"></span>
+          <span class="card-series-text">${item.seri}</span>
+        </div>
+        <div class="card-name">${hl(item.nama,query)}</div>
+        <div class="card-variant">${hl(varPrev.length>60?varPrev.slice(0,60)+'…':varPrev,query)}</div>
+        <div class="card-footer">${techBadges}${snBadge}</div>`;
+      grid.appendChild(card);
+    });
+  } else {
+    container.innerHTML='<div class="results-list" id="innerList"></div>';
+    const list=document.getElementById('innerList');
+    data.forEach((item,idx)=>{
+      const sns=getModelSNs(item.nama);
+      const row=document.createElement('div');
+      row.className='bike-list-row';row.onclick=()=>openModal(item);
+      const techBadges=(item.tech||[]).slice(0,2).map(t=>'<span class="badge badge-tech">'+t+'</span>').join('');
+      const snBadge=sns.length?'<span class="badge badge-sn">'+sns.length+' SN</span>':'';
+      const varText=item.varian.slice(0,1).join('');
+      row.innerHTML=`
+        <span class="list-num">${String(idx+1).padStart(3,'0')}</span>
+        <div class="list-sep"></div>
+        <span class="list-series">${item.seri.replace('Seri ','')}</span>
+        <span class="list-name">${hl(item.nama,query)}</span>
+        <span class="list-variant">${hl(varText||'—',query)}</span>
+        <div class="list-badges">${techBadges}${snBadge}</div>`;
+      list.appendChild(row);
+    });
+  }
+}
+
+// ===== MODAL =====
+function openModal(item){
+  const sns=getModelSNs(item.nama);
+  document.getElementById('mStamp').textContent='Seri '+item.kode+' — '+item.seri;
+  document.getElementById('mTitle').textContent=item.nama;
+  let body='';
+  if(item.varian.length){
+    body+='<div class="modal-section"><div class="modal-section-title">Varian & Tipe</div><div class="variant-list">'+item.varian.map(v=>'<div class="variant-item">'+v+'</div>').join('')+'</div></div>';
+  } else {
+    body+='<div class="modal-section"><div class="modal-section-title">Varian & Tipe</div><p style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--sepia3);">Data varian tidak tersedia untuk model ini.</p></div>';
+  }
+  if(item.tech&&item.tech.length){
+    body+='<div class="modal-section"><div class="modal-section-title">Teknologi Frame</div><div class="kw-wrap">'+item.tech.map(t=>'<span class="kw" style="background:#e8f0e4;border-color:#b8d4b0;color:var(--olive2);">'+t+'</span>').join('')+'</div></div>';
+  }
+  if(sns.length){
+    body+='<div class="modal-section"><div class="modal-section-title">Nomor Seri Terverifikasi ('+sns.length+')</div><div class="sn-modal-list">'+sns.slice(0,6).map(s=>{
+      const mn=MONTHS[s.bulan]||'?';
+      return '<div class="sn-modal-row"><span class="sn-modal-code">'+s.sn+'</span><span class="sn-modal-detail">'+mn+' '+s.tahun+'</span></div>';
+    }).join('')+'</div></div>';
+  }
+  const kw=(item.keywords||[]).filter(Boolean);
+  if(kw.length){
+    body+='<div class="modal-section"><div class="modal-section-title">Kata Kunci</div><div class="kw-wrap">'+kw.map(k=>'<span class="kw">'+k.toUpperCase()+'</span>').join('')+'</div></div>';
+  }
+  body+=`<div class="modal-section"><div class="modal-section-title">Info Klasifikasi</div><p style="font-family:var(--font-body);font-size:12px;color:var(--sepia2);line-height:1.7;">Model ini termasuk dalam <strong>${item.seri}</strong> (Kode Seri: <strong>${item.kode}</strong>) berdasarkan dokumen klasifikasi resmi Federal Cycle Manufacturing Indonesia.</p></div>`;
+  document.getElementById('mBody').innerHTML=body;
+  document.getElementById('modalBackdrop').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(e){if(e.target===document.getElementById('modalBackdrop'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('modalBackdrop').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
+
+// ===== DECODER =====
+function clearDecodeResult(){
+  document.getElementById('decodeError').classList.remove('show');
+  document.getElementById('decodeResult').classList.remove('show');
+  document.getElementById('drPlaceholder').style.display='block';
+}
+
+function decodeSN(){
+  const raw=document.getElementById('snInput').value.trim().toUpperCase().replace(/\s+/g,' ');
+  const errEl=document.getElementById('decodeError');
+  const resEl=document.getElementById('decodeResult');
+  const placeholder=document.getElementById('drPlaceholder');
+  errEl.classList.remove('show');resEl.classList.remove('show');
+
+  if(!raw){errEl.textContent='⚠ Masukkan nomor seri terlebih dahulu.';errEl.classList.add('show');return;}
+
+  const known=SN_DB.find(s=>s.sn.toUpperCase().replace(/\s+/g,' ')===raw);
+  const parts=raw.split(' ');
+  let pabrik,yearCode,monthCode,serial;
+
+  if(parts[0]==='FC'&&parts.length>=4){pabrik='FC';yearCode=parts[1];monthCode=parts[2];serial=parts.slice(3).join('');}
+  else if(parts[0]==='FC'&&parts.length===3&&parts[1].length===3){pabrik='FC';yearCode=parts[1].slice(0,2);monthCode=parts[1].slice(2);serial=parts[2];}
+  else if(parts[0]==='K'&&parts.length>=4){pabrik='K';yearCode=parts[1];monthCode=parts[2];serial=parts[3];}
+  else if(parts[0]==='W'&&parts.length>=4){pabrik='W';yearCode=parts[1];monthCode=parts[2];serial=parts[3];}
+  else if(/^\d{2}$/.test(parts[0])&&parts.length>=3){pabrik='?';yearCode=parts[0];monthCode=parts[1];serial=parts[2];}
+  else{errEl.textContent='⚠ Format tidak dikenali. Contoh: FC 33 Y 00582 atau FC 74 2 05912';errEl.classList.add('show');return;}
+
+  const monthName=MONTHS[monthCode];
+  if(!monthName&&monthCode!=='0'){errEl.textContent='⚠ Kode bulan tidak valid: "'+monthCode+'". Gunakan 1–9 atau X/Y/Z.';errEl.classList.add('show');return;}
+
+  const yr=parseInt(yearCode,10);
+  const year=isNaN(yr)?'?':(yr>=89&&yr<=99?1900+yr:(yr>=0&&yr<=30?1990+yr:1900+yr));
+  const facNames={FC:'Federal Cycle',K:'Kuwahara (?)',W:'Tidak diketahui','?':'Tidak diketahui'};
+  const facName=facNames[pabrik]||pabrik;
+  const modelName=known?known.model:'— Tidak teridentifikasi';
+
+  document.getElementById('drName').textContent=modelName;
+  document.getElementById('drBadge').textContent=facName;
+  document.getElementById('drFac').textContent=pabrik;
+  document.getElementById('drFacSub').textContent=facName;
+  document.getElementById('drYear').textContent=yearCode;
+  document.getElementById('drYearSub').textContent='Tahun '+year;
+  document.getElementById('drMonth').textContent=monthCode;
+  document.getElementById('drMonthSub').textContent=monthName||(monthCode==='0'?'Tidak diketahui':'?');
+  document.getElementById('drSerial').textContent=parseInt(serial,10).toLocaleString('id-ID')||serial;
+
+  const bkd=document.getElementById('drBreakdown');bkd.innerHTML='';
+  [{v:pabrik,d:'Pabrik'},{v:yearCode,d:'Tahun ('+year+')'},{v:monthCode,d:(monthName?monthName.slice(0,3):'?')},{v:serial,d:'No. Urut'}].forEach(b=>{
+    const el=document.createElement('div');el.className='bp';
+    el.innerHTML='<span class="bp-val">'+b.v+'</span><span class="bp-desc">'+b.d+'</span>';
+    bkd.appendChild(el);
+  });
+  placeholder.style.display='none';
+  resEl.classList.add('show');
+}
+
+// Quick chips
+const quickSNs=['FC 33 Y 00582','FC 74 2 05912','FC 14 Y 00006','FC 43 Z 02102','K 92 0 21182','W 89 0 60125'];
+const qcWrap=document.getElementById('quickChips');
+quickSNs.forEach(sn=>{
+  const c=document.createElement('span');c.className='quick-chip';c.textContent=sn;
+  c.onclick=()=>{document.getElementById('snInput').value=sn;decodeSN();};
+  qcWrap.appendChild(c);
+});
+
+// SN Table
+function buildSNTable(){
+  const tbody=document.getElementById('snTableBody');
+  SN_DB.forEach(s=>{
+    const mn=MONTHS[s.bulan]||s.bulan;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="sn-code">${s.sn}</td><td class="sn-model">${s.model}</td><td style="font-family:var(--font-mono);font-size:11px;">${s.pabrik}</td><td style="font-family:var(--font-mono);font-size:11px;">${s.tahun}</td><td style="font-size:11px;">${mn}</td><td><span class="badge-src">komunitas</span></td>`;
+    tr.onclick=()=>{
+      document.getElementById('snInput').value=s.sn;
+      document.querySelectorAll('.nav-item').forEach((b,i)=>b.classList.toggle('active',i===1));
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById('page-decoder').classList.add('active');
+      decodeSN();window.scrollTo({top:0,behavior:'smooth'});
+    };
+    tbody.appendChild(tr);
+  });
+}
+
+// ===== SUPABASE CONFIG =====
+const SUPA_URL = 'https://ayveqgijcwjuhphfogdh.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5dmVxZ2lqY3dqdWhwaGZvZ2RoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwNDYyMDksImV4cCI6MjA5NTYyMjIwOX0.xWOLew3eZvbSXtBLihhV8uT5zhszLna7x67l5PGCft4';
+
+async function supaFetch(path, options={}){
+  const res = await fetch(SUPA_URL+'/rest/v1/'+path, {
+    headers:{
+      'apikey': SUPA_KEY,
+      'Authorization': 'Bearer '+SUPA_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': options.prefer||'return=representation',
+      ...options.headers
+    },
+    ...options
+  });
+  if(!res.ok){
+    const err=await res.text();
+    throw new Error(err);
+  }
+  const text=await res.text();
+  return text ? JSON.parse(text) : [];
+}
+
+// ===== KONTRIBUSI =====
+function populateSeriesSelect(){
+  const sel=document.getElementById('cSeries');
+  sel.innerHTML='<option value="">— Pilih seri —</option>';
+  ALL_SERIES.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sel.appendChild(o);});
+}
+
+async function submitContrib(){
+  const sn=document.getElementById('cSN').value.trim().toUpperCase();
+  const model=document.getElementById('cModel').value.trim();
+  const seri=document.getElementById('cSeries').value;
+  const note=document.getElementById('cNote').value.trim();
+  const ok=document.getElementById('contribOk');ok.classList.remove('show');
+  if(!sn||!model){alert('Nomor seri dan nama model wajib diisi!');return;}
+
+  const btnSubmit=document.querySelector('.btn-submit');
+  btnSubmit.textContent='Menyimpan…';btnSubmit.disabled=true;
+
+  try{
+    // Cek duplikat
+    const existing=await supaFetch('sewer_speed?nomor_seri=eq.'+encodeURIComponent(sn)+'&select=id');
+    if(existing.length>0){alert('Nomor seri ini sudah ada dalam arsip komunitas!');return;}
+
+    await supaFetch('sewer_speed',{
+      method:'POST',
+      prefer:'return=minimal',
+      body:JSON.stringify({nomor_seri:sn, model:model, seri:seri||null, catatan:note||null})
+    });
+
+    ['cSN','cModel','cNote'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('cSeries').value='';
+    ok.textContent='✓ Terima kasih! Data berhasil disimpan ke arsip komunitas online. 🙏';
+    ok.classList.add('show');setTimeout(()=>ok.classList.remove('show'),4000);
+    await renderContribs();
+  } catch(e){
+    alert('Gagal menyimpan: '+e.message);
+  } finally {
+    btnSubmit.textContent='Simpan ke Arsip Komunitas';btnSubmit.disabled=false;
+  }
+}
+
+async function renderContribs(){
+  const list=document.getElementById('contribList');
+  const countEl=document.getElementById('contribCount');
+  list.innerHTML='<div style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--sepia3);padding:14px 0;">Memuat data komunitas…</div>';
+
+  try{
+    const arr=await supaFetch('sewer_speed?select=*&order=submitted_at.desc&limit=100');
+    countEl.textContent=arr.length+' entri';
+    if(!arr.length){
+      list.innerHTML='<div style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--sepia3);padding:14px 0;">Belum ada kontribusi. Jadilah yang pertama!</div>';
+      return;
+    }
+    list.innerHTML='';
+    arr.forEach((c)=>{
+      const tanggal=c.submitted_at?new Date(c.submitted_at).toLocaleDateString('id-ID'):'';
+      const el=document.createElement('div');el.className='contrib-item';
+      el.innerHTML=`<span class="ci-sn">${c.nomor_seri}</span><span class="ci-model">${c.model}${c.seri?'<br><span style="font-family:var(--font-mono);font-size:9px;color:var(--sepia3);">'+c.seri+'</span>':''}</span><span class="ci-note">${c.catatan||''}<br><span class="ci-date">${tanggal}</span></span>`;
+      list.appendChild(el);
+    });
+  } catch(e){
+    list.innerHTML='<div style="color:var(--rust2);font-size:13px;padding:14px 0;">Gagal memuat data: '+e.message+'</div>';
+  }
+}
+
+async function exportContribs(){
+  try{
+    const arr=await supaFetch('sewer_speed?select=*&order=submitted_at.desc');
+    if(!arr.length){alert('Belum ada data untuk diekspor.');return;}
+    const blob=new Blob([JSON.stringify(arr,null,2)],{type:'application/json'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='arsip_sn_federal_komunitas_'+Date.now()+'.json';a.click();
+  } catch(e){alert('Gagal export: '+e.message);}
+}
+
+function clearContribs(){
+  alert('Fitur hapus dinonaktifkan — data komunitas online tidak dapat dihapus sembarangan.\nHubungi admin untuk menghapus entri yang salah.');
+}
+
+// ===== INIT =====
+render();
+buildSNTable();
+populateSeriesSelect();
+renderContribs(); // async, loads from Supabase
+</script>
+</body>
+</html>
