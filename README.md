@@ -90,13 +90,6 @@ Proyek ini lahir dari kecintaan komunitas terhadap sepeda Federal MTB — sepeda
 
 ---
 
-## 📣 Komunitas
-
-- 🔵 **Facebook:** Federal Bike Indonesia
-- 📸 **Instagram:** #federalmtb #federalbike #sepedafederal
-
----
-
 ## ⚖️ Lisensi
 
 Data komunitas bersifat terbuka — bebas digunakan untuk keperluan non-komersial dengan menyebut sumbernya.
@@ -104,5 +97,5 @@ Data komunitas bersifat terbuka — bebas digunakan untuk keperluan non-komersia
 ---
 
 <div align="center">
-  <sub>Dibuat dengan ❤️ oleh komunitas Federal Riders Indonesia</sub>
+  <sub>Dibuat dengan ❤️ oleh Sodikin Kurniawan</sub>
 </div>
