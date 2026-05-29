@@ -7,7 +7,7 @@
 
 ## 🌐 Buka Aplikasi
 
-👉 **[MTB Federal Cycle](https://sodiyc.github.io/federal-mtb/index.html)**
+👉 **[MTB Federal Cycle](https://sodiyc.github.io/federal-mtb/federal_mtb_database.html)**
 
 ---
 
