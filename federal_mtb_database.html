@@ -941,6 +941,87 @@ table.retro-table tr:hover td{background:var(--paper3);}
   .logo-wordmark{font-size:16px;}
   .section-headline h2{font-size:18px;}
 }
+
+/* ===== STATISTIK KOMUNITAS ===== */
+.stats-komunitas{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border:2px solid var(--ink);margin-bottom:20px;
+  background:var(--ink);
+}
+.stat-box{
+  background:var(--white);
+  padding:16px 14px 14px;
+  border-right:1px solid var(--rule);
+  text-align:center;
+}
+.stat-box:last-child{border-right:none;}
+.stat-val{
+  font-family:var(--font-display);font-size:32px;font-weight:900;
+  color:var(--ink);line-height:1;
+  display:block;margin-bottom:4px;
+}
+.stat-lbl{
+  font-family:var(--font-mono);font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--mid2);display:block;
+}
+.stat-loading{font-family:var(--font-mono);font-size:18px;color:var(--mid3);animation:pulse 1.2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.top-model-list{display:flex;flex-direction:column;gap:0;}
+.top-model-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--rule2);}
+.top-model-row:last-child{border-bottom:none;}
+.top-rank{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--mid3);min-width:22px;}
+.top-name{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--ink);flex:1;}
+.top-count{font-family:var(--font-mono);font-size:11px;color:var(--mid2);white-space:nowrap;}
+.top-bar-wrap{width:60px;height:4px;background:var(--rule2);}
+.top-bar{height:4px;background:var(--ink);transition:width 0.6s ease;}
+.year-chart{display:flex;align-items:flex-end;gap:4px;height:60px;margin-top:10px;}
+.year-bar-col{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
+.year-bar{width:100%;background:var(--ink);min-height:2px;}
+.year-label{font-family:var(--font-mono);font-size:8px;color:var(--mid2);}
+@media(max-width:600px){
+  .stats-komunitas{grid-template-columns:repeat(2,1fr);}
+  .stat-box:nth-child(2){border-right:none;}
+  .stat-box:nth-child(3){border-top:1px solid var(--rule);}
+  .stat-box:nth-child(4){border-top:1px solid var(--rule);border-right:none;}
+  .stat-val{font-size:26px;}
+}
+
+/* ===== VERIFIKASI SN PANEL ===== */
+.verifik-panel{background:var(--white);border:2px solid var(--ink);padding:20px 22px;margin-bottom:20px;}
+.verifik-title{font-family:var(--font-display);font-size:18px;font-weight:900;color:var(--ink);margin-bottom:4px;}
+.verifik-sub{font-family:var(--font-mono);font-size:10px;color:var(--mid2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.verifik-row{display:flex;gap:8px;}
+.verifik-input{flex:1;padding:11px 14px;border:1.5px solid var(--rule);font-family:var(--font-mono);font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:var(--paper);outline:none;transition:border-color 0.14s;}
+.verifik-input:focus{border-color:var(--ink);}
+.verifik-input::placeholder{font-weight:400;font-size:13px;letter-spacing:0;text-transform:none;color:var(--mid3);font-family:var(--font-body);}
+.btn-verifik{padding:11px 20px;background:var(--ink);border:none;font-family:var(--font-mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--white);cursor:pointer;white-space:nowrap;transition:background 0.12s;}
+.btn-verifik:hover{background:var(--ink2);}
+.verifik-result{margin-top:14px;display:none;}
+.verifik-result.show{display:block;}
+.verifik-found{background:var(--paper2);border:1.5px solid var(--ink);padding:14px 16px;display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;}
+.verifik-found-icon{font-size:28px;line-height:1;}
+.verifik-found-detail{flex:1;}
+.verifik-found-sn{font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--ink);letter-spacing:0.06em;margin-bottom:3px;}
+.verifik-found-model{font-family:var(--font-display);font-size:18px;font-weight:900;color:var(--ink);margin-bottom:4px;}
+.verifik-found-meta{font-family:var(--font-body);font-size:12px;color:var(--mid2);font-style:italic;}
+.verifik-stamp{align-self:flex-start;border:2px solid var(--ink);padding:4px 10px;font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink);transform:rotate(-2deg);white-space:nowrap;}
+.verifik-not-found{background:var(--paper2);border:1.5px dashed var(--rule);padding:14px 16px;font-family:var(--font-body);font-size:13px;color:var(--mid2);font-style:italic;}
+@media(max-width:600px){.verifik-row{flex-direction:column;}.btn-verifik{width:100%;padding:12px;text-align:center;}}
+
+/* ===== MODAL SPECS ===== */
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);margin-bottom:12px;}
+.spec-item{padding:9px 12px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.spec-item:nth-child(even){border-right:none;}
+.spec-item:nth-last-child(-n+2){border-bottom:none;}
+.spec-key{font-family:var(--font-mono);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--mid2);margin-bottom:3px;}
+.spec-val{font-family:var(--font-body);font-size:12px;font-weight:700;color:var(--ink);}
+.silhouette-wrap{text-align:center;padding:14px;background:var(--paper2);border:1px solid var(--rule);margin-bottom:12px;}
+.silhouette-cap{font-family:var(--font-mono);font-size:9px;color:var(--mid2);text-transform:uppercase;letter-spacing:0.1em;margin-top:6px;}
+.stats-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+@media(max-width:600px){.stats-2col{grid-template-columns:1fr;}}
+.stats-card{background:var(--white);border:1.5px solid var(--rule);padding:16px 18px;}
+.stats-card-title{font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--mid2);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--rule2);}
 </style>
 </head>
 <body>
@@ -966,6 +1047,8 @@ table.retro-table tr:hover td{background:var(--paper3);}
   <nav class="nav-strip">
     <button class="nav-item active" onclick="showPage('db',this)"><span class="nav-icon">📰</span> Katalog</button>
     <button class="nav-item" onclick="showPage('decoder',this)"><span class="nav-icon">🔢</span> Decoder SN</button>
+    <button class="nav-item" onclick="showPage('verifik',this)"><span class="nav-icon">🔎</span> Cek SN</button>
+    <button class="nav-item" onclick="showPage('stats',this)"><span class="nav-icon">📊</span> Statistik</button>
     <button class="nav-item" onclick="showPage('contrib',this)"><span class="nav-icon">✍️</span> Kontribusi</button>
   </nav>
 </header>
@@ -1131,7 +1214,7 @@ table.retro-table tr:hover td{background:var(--paper3);}
 <div class="container">
   <div class="section-headline">
     <h2>Kontribusi <em>Komunitas</em></h2>
-    <div class="section-meta">Arsip Terbuka<br>MTB Federal Indonesia</div>
+    <div class="section-meta">Arsip Terbuka<br>Federal Riders Indonesia</div>
   </div>
 
   <div class="contrib-layout">
@@ -1180,7 +1263,7 @@ table.retro-table tr:hover td{background:var(--paper3);}
         <div class="info-card-title">🌐 Data Tersimpan Online</div>
         <div class="info-card-body">
           Data langsung tersimpan di database komunitas online<br>
-          dan bisa dilihat oleh semua member MTB Federal Indonesia.<br>
+          dan bisa dilihat oleh semua member Federal Riders Indonesia.<br>
           Gunakan <b>Export JSON</b> untuk backup data lengkap komunitas.
         </div>
       </div>
@@ -1197,6 +1280,103 @@ table.retro-table tr:hover td{background:var(--paper3);}
       <button class="btn-action" onclick="exportContribs()">↑ Export JSON</button>
       <button class="btn-action" onclick="clearContribs()" style="color:var(--rust2);">✕ Hapus Semua</button>
     </div>
+  </div>
+</div>
+</div>
+
+<!-- =================== CEK SN =================== -->
+<div class="page" id="page-verifik">
+<div class="container">
+  <div class="section-headline">
+    <h2>Cek <em>Nomor Seri</em></h2>
+    <div class="section-meta">Verifikasi SN<br>Database Komunitas</div>
+  </div>
+
+  <div class="verifik-panel">
+    <div class="verifik-title">Cek Keaslian Nomor Seri</div>
+    <div class="verifik-sub">Cari apakah SN sudah tercatat di arsip komunitas Federal Riders Indonesia</div>
+    <div class="verifik-row">
+      <input type="text" class="verifik-input" id="vInput" placeholder="Contoh: FC 33 Y 00582" maxlength="25"
+        onkeydown="if(event.key==='Enter')cekSN()"/>
+      <button class="btn-verifik" onclick="cekSN()">▶ Cek Sekarang</button>
+    </div>
+    <div class="verifik-result" id="verifResult"></div>
+  </div>
+
+  <div class="stats-2col">
+    <div class="stats-card">
+      <div class="stats-card-title">📋 Cara Membaca Nomor Seri</div>
+      <div style="font-family:var(--font-body);font-size:12px;color:var(--mid);line-height:1.9;">
+        1. Balik sepeda atau lihat bagian <b>bawah bottom bracket</b><br>
+        2. Nomor seri <b>digravir atau cetak timbul</b> — bukan stiker<br>
+        3. Bersihkan karat/cat dulu, foto dengan <b>cahaya miring</b><br>
+        4. Format umum: <b>FC &nbsp;XX &nbsp;X &nbsp;XXXXX</b><br>
+        5. Ketik persis seperti tertera (spasi tetap disertakan)
+      </div>
+    </div>
+    <div class="stats-card">
+      <div class="stats-card-title">⚠️ Catatan Penting</div>
+      <div style="font-family:var(--font-body);font-size:12px;color:var(--mid);line-height:1.9;">
+        Database komunitas masih terus berkembang.<br>
+        SN <b>tidak ditemukan</b> bukan berarti sepeda palsu —<br>
+        bisa jadi belum dicatat komunitas.<br><br>
+        SN <b>ditemukan</b> = sudah diverifikasi pemilik lain.<br>
+        Bandingkan model & tahun untuk konfirmasi.
+      </div>
+    </div>
+  </div>
+
+  <div class="contrib-list-card">
+    <div class="contrib-list-title">
+      <span>Semua SN Tersimpan di Komunitas</span>
+      <span class="contrib-count" id="verifCount">Memuat…</span>
+    </div>
+    <div id="verifList"></div>
+  </div>
+</div>
+</div>
+
+<!-- =================== STATISTIK =================== -->
+<div class="page" id="page-stats">
+<div class="container">
+  <div class="section-headline">
+    <h2>Statistik <em>Komunitas</em></h2>
+    <div class="section-meta">Data Realtime<br>Supabase</div>
+  </div>
+
+  <!-- 4 angka besar -->
+  <div class="stats-komunitas" id="statsKomunitas">
+    <div class="stat-box"><span class="stat-val stat-loading" id="sTotalSN">…</span><span class="stat-lbl">Total SN Terdaftar</span></div>
+    <div class="stat-box"><span class="stat-val stat-loading" id="sTotalModel">…</span><span class="stat-lbl">Model Unik</span></div>
+    <div class="stat-box"><span class="stat-val stat-loading" id="sTopYear">…</span><span class="stat-lbl">Tahun Terbanyak</span></div>
+    <div class="stat-box"><span class="stat-val stat-loading" id="sLastAdded">…</span><span class="stat-lbl">Terakhir Ditambah</span></div>
+  </div>
+
+  <div class="stats-2col">
+    <!-- Top 5 Model -->
+    <div class="stats-card">
+      <div class="stats-card-title">🏆 Model Terpopuler di Komunitas</div>
+      <div class="top-model-list" id="topModelList">
+        <div style="font-family:var(--font-body);font-style:italic;font-size:12px;color:var(--mid3);">Memuat data…</div>
+      </div>
+    </div>
+
+    <!-- Distribusi tahun -->
+    <div class="stats-card">
+      <div class="stats-card-title">📅 Distribusi Tahun Produksi</div>
+      <div class="year-chart" id="yearChart">
+        <div style="font-family:var(--font-body);font-style:italic;font-size:12px;color:var(--mid3);">Memuat data…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontribusi terbaru -->
+  <div class="contrib-list-card">
+    <div class="contrib-list-title">
+      <span>10 Kontribusi Terbaru</span>
+      <button class="btn-action" onclick="loadStats()" style="font-size:10px;padding:5px 12px;">↻ Refresh</button>
+    </div>
+    <div id="recentList"><div style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--mid3);padding:14px 0;">Memuat data komunitas…</div></div>
   </div>
 </div>
 </div>
@@ -1385,6 +1565,8 @@ function showPage(id,btn){
   document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   if(btn)btn.classList.add('active');
+  if(id==='stats') loadStats();
+  if(id==='verifik') loadVerifikList();
 }
 
 // ===== KATALOG =====
@@ -1516,30 +1698,104 @@ function render(){
 }
 
 // ===== MODAL =====
+// Specs data per model
+const SPECS={
+  'Alpenz Peak':{frame:'FIT3000 / Megatubing Ovalized',fork:'Hi-Ten Steel',gear:'Shimano SIS 18-spd',ban:'26" x 2.1"',tahun:'1993–1995',warna:'Biru / Merah / Hitam'},
+  'StreetCat':{frame:'cycle2000 HT9401',fork:'Hi-Ten Steel',gear:'Shimano SIS 15-spd',ban:'26" x 1.95"',tahun:'1991–1994',warna:'Hitam / Merah'},
+  'MuddyCat':{frame:'Hi-Ten Steel',fork:'Hi-Ten Steel',gear:'Shimano 15-spd',ban:'26" x 2.0"',tahun:'1990–1995',warna:'Hijau / Biru'},
+  'TomCat':{frame:'FMG Rockhopper',fork:'Hi-Ten Steel',gear:'Shimano SIS',ban:'26" x 2.0"',tahun:'1992–1995',warna:'Merah / Hitam'},
+  'CityCat':{frame:'cycle2000 HT9401 / FIT2000',fork:'Hi-Ten Steel',gear:'Shimano SIS 18-spd',ban:'26" x 1.75"',tahun:'1991–1995',warna:'Putih / Biru'},
+  'WildCat':{frame:'cycle2000 HT9401',fork:'Hi-Ten Steel',gear:'Shimano SIS 15-spd',ban:'26" x 1.95"',tahun:'1991–1994',warna:'Ungu / Merah'},
+  'BobCat':{frame:'cycle2000 HT9401',fork:'Hi-Ten Steel',gear:'Shimano SIS',ban:'20" / 26"',tahun:'1990–1994',warna:'Biru / Hijau'},
+  'Mt Everest':{frame:'cycle2000 HT9401 / FIT3000',fork:'Hi-Ten Steel',gear:'Shimano SIS 21-spd',ban:'26" x 2.1"',tahun:'1993–1996',warna:'Motif Retak / 2-Tone'},
+  'Cartenz Peak':{frame:'cycle2000 HT9401',fork:'Hi-Ten Steel',gear:'Shimano SIS 18-spd',ban:'26" x 2.1"',tahun:'1993–1995',warna:'Hijau / Biru'},
+  'Rock Blazer':{frame:'cycle2000 HT9401',fork:'Hi-Ten Steel',gear:'Shimano SIS 15-spd',ban:'26" x 2.0"',tahun:'1992–1994',warna:'Merah / Hitam'},
+  'Alpha':{frame:'cycle2000',fork:'Hi-Ten Steel',gear:'Shimano SIS 10-spd',ban:'700c x 28mm',tahun:'1992–1995',warna:'Putih / Merah'},
+  'Beta':{frame:'cycle2000',fork:'Hi-Ten Steel',gear:'Shimano SIS 10-spd',ban:'700c x 28mm',tahun:'1992–1994',warna:'Biru / Putih'},
+};
+
+// SVG silhouettes per type
+function getSilhouette(seri){
+  const mtb=`<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="silhouette-svg">
+    <circle cx="40" cy="58" r="18" stroke="#0d0d0d" stroke-width="2.5" fill="none"/>
+    <circle cx="160" cy="58" r="18" stroke="#0d0d0d" stroke-width="2.5" fill="none"/>
+    <circle cx="40" cy="58" r="3" fill="#0d0d0d"/>
+    <circle cx="160" cy="58" r="3" fill="#0d0d0d"/>
+    <line x1="160" y1="58" x2="128" y2="20" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="128" y1="20" x2="100" y2="38" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="100" y1="38" x2="40" y2="58" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="100" y1="38" x2="96" y2="15" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="128" y1="20" x2="96" y2="15" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="96" y1="15" x2="80" y2="15" stroke="#0d0d0d" stroke-width="3"/>
+    <line x1="80" y1="15" x2="80" y2="28" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="128" y1="20" x2="138" y2="12" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="132" y1="10" x2="144" y2="14" stroke="#0d0d0d" stroke-width="3"/>
+    <line x1="100" y1="38" x2="106" y2="48" stroke="#0d0d0d" stroke-width="2"/>
+    <ellipse cx="106" cy="50" rx="6" ry="4" stroke="#0d0d0d" stroke-width="1.5" fill="none"/>
+  </svg>`;
+  const road=`<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="silhouette-svg">
+    <circle cx="40" cy="58" r="18" stroke="#0d0d0d" stroke-width="2.5" fill="none"/>
+    <circle cx="160" cy="58" r="18" stroke="#0d0d0d" stroke-width="2.5" fill="none"/>
+    <circle cx="40" cy="58" r="3" fill="#0d0d0d"/>
+    <circle cx="160" cy="58" r="3" fill="#0d0d0d"/>
+    <line x1="160" y1="58" x2="132" y2="22" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="132" y1="22" x2="104" y2="36" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="104" y1="36" x2="40" y2="58" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="104" y1="36" x2="100" y2="14" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="132" y1="22" x2="100" y2="14" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="100" y1="14" x2="82" y2="14" stroke="#0d0d0d" stroke-width="3"/>
+    <line x1="82" y1="14" x2="82" y2="26" stroke="#0d0d0d" stroke-width="2.5"/>
+    <line x1="132" y1="22" x2="145" y2="18" stroke="#0d0d0d" stroke-width="2.5"/>
+    <path d="M143 16 Q148 14 150 18 Q148 20 143 20Z" fill="#0d0d0d"/>
+  </svg>`;
+  if(seri==='Seri Road') return road;
+  return mtb;
+}
+
 function openModal(item){
   const sns=getModelSNs(item.nama);
   document.getElementById('mStamp').textContent='Seri '+item.kode+' — '+item.seri;
   document.getElementById('mTitle').textContent=item.nama;
   let body='';
+
+  // Silhouette
+  body+=`<div class="silhouette-wrap">${getSilhouette(item.seri)}<div class="silhouette-cap">${item.seri} · Ilustrasi Rangka</div></div>`;
+
+  // Specs table
+  const sp=SPECS[item.nama];
+  if(sp){
+    body+=`<div class="modal-section"><div class="modal-section-title">Spesifikasi Teknis</div>
+    <div class="spec-grid">
+      <div class="spec-item"><div class="spec-key">Frame</div><div class="spec-val">${sp.frame}</div></div>
+      <div class="spec-item"><div class="spec-key">Fork</div><div class="spec-val">${sp.fork}</div></div>
+      <div class="spec-item"><div class="spec-key">Groupset</div><div class="spec-val">${sp.gear}</div></div>
+      <div class="spec-item"><div class="spec-key">Ukuran Ban</div><div class="spec-val">${sp.ban}</div></div>
+      <div class="spec-item"><div class="spec-key">Est. Produksi</div><div class="spec-val">${sp.tahun}</div></div>
+      <div class="spec-item"><div class="spec-key">Warna Umum</div><div class="spec-val">${sp.warna}</div></div>
+    </div></div>`;
+  } else {
+    body+=`<div class="modal-section"><div class="modal-section-title">Spesifikasi Teknis</div><p style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--mid3);">Data spesifikasi untuk model ini belum tersedia. Bantu kami lengkapi via tab Kontribusi.</p></div>`;
+  }
+
+  // Variants
   if(item.varian.length){
     body+='<div class="modal-section"><div class="modal-section-title">Varian & Tipe</div><div class="variant-list">'+item.varian.map(v=>'<div class="variant-item">'+v+'</div>').join('')+'</div></div>';
-  } else {
-    body+='<div class="modal-section"><div class="modal-section-title">Varian & Tipe</div><p style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--sepia3);">Data varian tidak tersedia untuk model ini.</p></div>';
   }
+
+  // Tech
   if(item.tech&&item.tech.length){
-    body+='<div class="modal-section"><div class="modal-section-title">Teknologi Frame</div><div class="kw-wrap">'+item.tech.map(t=>'<span class="kw" style="background:#e8f0e4;border-color:#b8d4b0;color:var(--olive2);">'+t+'</span>').join('')+'</div></div>';
+    body+='<div class="modal-section"><div class="modal-section-title">Teknologi Frame</div><div class="kw-wrap">'+item.tech.map(t=>'<span class="kw">'+t+'</span>').join('')+'</div></div>';
   }
+
+  // Known SNs
   if(sns.length){
     body+='<div class="modal-section"><div class="modal-section-title">Nomor Seri Terverifikasi ('+sns.length+')</div><div class="sn-modal-list">'+sns.slice(0,6).map(s=>{
       const mn=MONTHS[s.bulan]||'?';
       return '<div class="sn-modal-row"><span class="sn-modal-code">'+s.sn+'</span><span class="sn-modal-detail">'+mn+' '+s.tahun+'</span></div>';
-    }).join('')+'</div></div>';
+    }).join('')+(sns.length>6?'<div style="font-family:var(--font-mono);font-size:10px;color:var(--mid2);padding:6px 0;">+ '+(sns.length-6)+' lainnya di database</div>':'')+'</div></div>';
   }
-  const kw=(item.keywords||[]).filter(Boolean);
-  if(kw.length){
-    body+='<div class="modal-section"><div class="modal-section-title">Kata Kunci</div><div class="kw-wrap">'+kw.map(k=>'<span class="kw">'+k.toUpperCase()+'</span>').join('')+'</div></div>';
-  }
-  body+=`<div class="modal-section"><div class="modal-section-title">Info Klasifikasi</div><p style="font-family:var(--font-body);font-size:12px;color:var(--sepia2);line-height:1.7;">Model ini termasuk dalam <strong>${item.seri}</strong> (Kode Seri: <strong>${item.kode}</strong>) berdasarkan dokumen klasifikasi resmi Federal Cycle Manufacturing Indonesia.</p></div>`;
+
+  body+=`<div class="modal-section"><div class="modal-section-title">Info Klasifikasi</div><p style="font-family:var(--font-body);font-size:12px;color:var(--mid);line-height:1.7;">Model ini termasuk dalam <strong>${item.seri}</strong> (Kode Seri: <strong>${item.kode}</strong>) berdasarkan dokumen klasifikasi Federal Cycle Manufacturing Indonesia.</p></div>`;
   document.getElementById('mBody').innerHTML=body;
   document.getElementById('modalBackdrop').classList.add('open');
   document.body.style.overflow='hidden';
@@ -1547,6 +1803,160 @@ function openModal(item){
 function closeModal(e){if(e.target===document.getElementById('modalBackdrop'))closeModalDirect();}
 function closeModalDirect(){document.getElementById('modalBackdrop').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
+
+// ===== CEK SN =====
+async function cekSN(){
+  const sn=document.getElementById('vInput').value.trim().toUpperCase();
+  const resEl=document.getElementById('verifResult');
+  if(!sn){resEl.innerHTML='<div class="verifik-not-found">Masukkan nomor seri terlebih dahulu.</div>';resEl.classList.add('show');return;}
+
+  resEl.innerHTML='<div style="font-family:var(--font-mono);font-size:12px;color:var(--mid2);padding:10px 0;">Mencari di database komunitas…</div>';
+  resEl.classList.add('show');
+
+  try{
+    // Cek di SN_DB lokal dulu
+    const localHit=SN_DB.find(s=>s.sn.toUpperCase().replace(/\s+/g,' ')===sn.replace(/\s+/g,' '));
+
+    // Cek di Supabase
+    const onlineHits=await supaFetch('sewer_speed?nomor_seri=eq.'+encodeURIComponent(sn)+'&select=*');
+
+    if(localHit||onlineHits.length>0){
+      const model=localHit?localHit.model:(onlineHits[0].model);
+      const tahun=localHit?localHit.tahun:'';
+      const bulan=localHit?(MONTHS[localHit.bulan]||localHit.bulan):'';
+      const src=localHit?'Database Arsip Resmi':'Kontribusi Komunitas';
+      resEl.innerHTML=`<div class="verifik-found">
+        <div class="verifik-found-icon">✅</div>
+        <div class="verifik-found-detail">
+          <div class="verifik-found-sn">${sn}</div>
+          <div class="verifik-found-model">${model}</div>
+          <div class="verifik-found-meta">${tahun?tahun+(bulan?' · '+bulan:''):''}${src?' · Sumber: '+src:''}</div>
+        </div>
+        <div class="verifik-stamp">✓ Terverifikasi</div>
+      </div>`;
+    } else {
+      resEl.innerHTML=`<div class="verifik-not-found">
+        <strong>SN tidak ditemukan</strong> di database komunitas.<br><br>
+        Bukan berarti palsu — mungkin belum dicatat. Jika Anda memiliki sepeda ini, 
+        <a href="#" onclick="showPage('contrib',document.querySelectorAll('.nav-item')[4]);return false;" 
+           style="color:var(--ink);font-weight:700;">tambahkan ke arsip komunitas →</a>
+      </div>`;
+    }
+  } catch(e){
+    resEl.innerHTML='<div class="verifik-not-found">Gagal menghubungi database: '+e.message+'</div>';
+  }
+}
+
+// Load verifik list (all community SNs)
+async function loadVerifikList(){
+  try{
+    const arr=await supaFetch('sewer_speed?select=*&order=submitted_at.desc&limit=200');
+    document.getElementById('verifCount').textContent=arr.length+' entri';
+    const list=document.getElementById('verifList');
+    if(!arr.length){list.innerHTML='<div style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--mid3);padding:14px 0;">Belum ada kontribusi.</div>';return;}
+    list.innerHTML='';
+    arr.forEach(c=>{
+      const tgl=c.submitted_at?new Date(c.submitted_at).toLocaleDateString('id-ID'):'';
+      const el=document.createElement('div');el.className='contrib-item';
+      el.innerHTML=`<span class="ci-sn">${c.nomor_seri}</span><span class="ci-model">${c.model}${c.seri?'<br><span style="font-size:9px;color:var(--mid3);">'+c.seri+'</span>':''}</span><span class="ci-note">${c.catatan||''}<br><span class="ci-date">${tgl}</span></span>`;
+      list.appendChild(el);
+    });
+  } catch(e){
+    document.getElementById('verifList').innerHTML='<div style="color:var(--mid2);font-size:13px;padding:14px 0;">Gagal memuat: '+e.message+'</div>';
+  }
+}
+
+// ===== STATISTIK =====
+async function loadStats(){
+  try{
+    const arr=await supaFetch('sewer_speed?select=*&order=submitted_at.desc&limit=500');
+    const total=arr.length;
+
+    // Total SN
+    document.getElementById('sTotalSN').textContent=total||'0';
+    document.getElementById('sTotalSN').classList.remove('stat-loading');
+
+    // Model unik
+    const models=[...new Set(arr.map(a=>a.model))];
+    document.getElementById('sTotalModel').textContent=models.length||'0';
+    document.getElementById('sTotalModel').classList.remove('stat-loading');
+
+    // Decode tahun dari SN
+    const years={};
+    arr.forEach(a=>{
+      const parts=(a.nomor_seri||'').split(' ');
+      if(parts.length>=3&&(parts[0]==='FC'||parts[0]==='K'||parts[0]==='W')){
+        const yr=parseInt(parts[1],10);
+        if(!isNaN(yr)){
+          const y=yr>=89&&yr<=99?1900+yr:(yr>=0&&yr<=30?1990+yr:1900+yr);
+          years[y]=(years[y]||0)+1;
+        }
+      }
+    });
+
+    // Top year
+    const topYr=Object.entries(years).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById('sTopYear').textContent=topYr?topYr[0]:'—';
+    document.getElementById('sTopYear').classList.remove('stat-loading');
+
+    // Last added
+    if(arr.length){
+      const d=new Date(arr[0].submitted_at);
+      const diff=Math.floor((Date.now()-d)/86400000);
+      document.getElementById('sLastAdded').textContent=diff===0?'Hari ini':diff+'h lalu';
+    } else {
+      document.getElementById('sLastAdded').textContent='—';
+    }
+    document.getElementById('sLastAdded').classList.remove('stat-loading');
+
+    // Top 5 models
+    const modelCount={};
+    arr.forEach(a=>{if(a.model)modelCount[a.model]=(modelCount[a.model]||0)+1;});
+    const topModels=Object.entries(modelCount).sort((a,b)=>b[1]-a[1]).slice(0,5);
+    const maxMC=topModels[0]?topModels[0][1]:1;
+    const topEl=document.getElementById('topModelList');
+    if(topModels.length){
+      topEl.innerHTML=topModels.map(([name,cnt],i)=>`
+        <div class="top-model-row">
+          <span class="top-rank">#${i+1}</span>
+          <span class="top-name">${name}</span>
+          <div class="top-bar-wrap"><div class="top-bar" style="width:${Math.round(cnt/maxMC*100)}%"></div></div>
+          <span class="top-count">${cnt} SN</span>
+        </div>`).join('');
+    } else {
+      topEl.innerHTML='<div style="font-family:var(--font-body);font-style:italic;font-size:12px;color:var(--mid3);">Belum ada data.</div>';
+    }
+
+    // Year chart
+    const chartEl=document.getElementById('yearChart');
+    const sortedYears=Object.entries(years).sort((a,b)=>a[0]-b[0]);
+    if(sortedYears.length){
+      const maxY=Math.max(...sortedYears.map(y=>y[1]));
+      chartEl.innerHTML=sortedYears.map(([y,c])=>`
+        <div class="year-bar-col">
+          <div class="year-bar" style="height:${Math.round(c/maxY*50)+4}px" title="${y}: ${c} SN"></div>
+          <span class="year-label">'${String(y).slice(2)}</span>
+        </div>`).join('');
+    } else {
+      chartEl.innerHTML='<div style="font-family:var(--font-body);font-style:italic;font-size:12px;color:var(--mid3);">Belum ada data tahun.</div>';
+    }
+
+    // 10 kontribusi terbaru
+    const recentEl=document.getElementById('recentList');
+    recentEl.innerHTML='';
+    arr.slice(0,10).forEach(c=>{
+      const tgl=c.submitted_at?new Date(c.submitted_at).toLocaleDateString('id-ID'):'';
+      const el=document.createElement('div');el.className='contrib-item';
+      el.innerHTML=`<span class="ci-sn">${c.nomor_seri}</span><span class="ci-model">${c.model}</span><span class="ci-note"><span class="ci-date">${tgl}</span></span>`;
+      recentEl.appendChild(el);
+    });
+    if(!arr.length) recentEl.innerHTML='<div style="font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--mid3);padding:14px 0;">Belum ada kontribusi.</div>';
+
+  } catch(e){
+    document.getElementById('sTotalSN').textContent='!';
+    document.getElementById('recentList').innerHTML='<div style="font-size:13px;color:var(--mid2);padding:14px 0;">Gagal memuat statistik: '+e.message+'</div>';
+  }
+}
 
 // ===== DECODER =====
 function clearDecodeResult(){
